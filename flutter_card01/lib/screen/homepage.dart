@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../module/data_module.dart';
 import '../widget/card.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -12,7 +11,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
- 
   List<DataModule> data = [
     DataModule(
       title: 'آثار المدينة القديمة',
@@ -61,10 +59,11 @@ class _HomePageState extends State<HomePage> {
             itemCount: data.length,
             itemBuilder: (context, index) {
               return CardScreen(
-                title:data[index].title.toString() ,
+                title: data[index].title.toString(),
                 dectitle: data[index].dectitle.toString(),
-                image:data[index].image.toString() ,
-              );}),
+                image: data[index].image.toString(),
+              );
+            }),
       ),
     );
   }

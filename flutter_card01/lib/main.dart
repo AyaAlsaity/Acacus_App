@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_card01/screen/homepage.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'screen/firstscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,13 +14,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Aya Alsaity',
-      debugShowCheckedModeBanner:false,
-           theme: ThemeData(
-            
-              primarySwatch: Colors.blue,
-              textTheme: GoogleFonts.tajawalTextTheme(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        textTheme: GoogleFonts.tajawalTextTheme(),
       ),
-      home:const HomePage() ,
+      home: const FirstScreen(),
     );
   }
 }
