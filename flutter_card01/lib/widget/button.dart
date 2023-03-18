@@ -7,10 +7,14 @@ class ButtonScreen extends StatefulWidget {
     required this.isbackround,
     required this.title,
     required this.widthh,
+    required this.heightt,
+    required this.paddingg,
   }) : super(key: key);
   final bool isbackround;
   final String title;
   final double widthh;
+  final double heightt;
+  final double paddingg;
 
   @override
   State<ButtonScreen> createState() => _ButtonScreenState();
@@ -20,7 +24,7 @@ class _ButtonScreenState extends State<ButtonScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 40,
+      height: widget.heightt,
       width: widget.widthh,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
@@ -29,7 +33,7 @@ class _ButtonScreenState extends State<ButtonScreen> {
       ),
       // ignore: prefer_const_constructors
       child: Padding(
-        padding: const EdgeInsets.all(4.5),
+        padding:  EdgeInsets.all(widget.paddingg),
         // ignore: prefer_const_constructors
         child: Text(
           widget.title,

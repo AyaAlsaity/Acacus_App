@@ -160,6 +160,8 @@ class _CardScreenState extends State<CardScreen> {
                             isbackround: true,
                             title: 'معرفة المزيد',
                             widthh: 120,
+                            heightt: 40,
+                            paddingg: 5.5,
                           ),
                         ),
                       ],

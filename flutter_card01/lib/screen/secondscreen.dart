@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
@@ -22,111 +21,122 @@ class _SecondScreenState extends State<SecondScreen> {
     return IntroductionScreen(
       key: _introKey,
       pages: [
-        PageViewModel(
-            title: '',
-            bodyWidget: Padding(
-              padding: const EdgeInsets.only(
-                  left: 10, right: 10, bottom: 20, top: 5),
-              child: Column(
-                children: [
-                  Text(
-                    'اكاكوس',
-                    style: GoogleFonts.gulzar(
-                      fontSize: 50,
-                      fontWeight: FontWeight.w400,
-                      fontStyle: FontStyle.italic,
-                      color: mainColor,
+          PageViewModel(
+            
+            titleWidget:Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Text(
+                      'اكاكوس',
+                      style: GoogleFonts.gulzar(
+                        fontSize: 50,
+                        fontWeight: FontWeight.w400,
+                        fontStyle: FontStyle.italic,
+                        color: mainColor,
+                      ),
                     ),
-                  ),
-                  Image.asset('images/photo1.png'),
-                  Text(
-                    'اكتشف جمال بلادنا الحبيبة ليبيا',
+            ),
+            bodyWidget:Column(
+              children: [
+                Center(
+                  child: Image.asset('images/photo1.png',height: 250, ),
+                ),
+                Text(
+'اكتشف جمال بلادنا الحبيبة ليبيا 🇱🇾',
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.gulzar(
+                    style: TextStyle(
                       fontSize: 18,
-                      fontWeight: FontWeight.w700,
+                      fontWeight: FontWeight.w400,
                       color: mainColorText,
                     ),
                   ),
-                ],
-              ),
-            )),
-        PageViewModel(
-            title: '',
-            bodyWidget: Padding(
-              padding:
-                  const EdgeInsets.only(left: 5, right: 5, bottom: 5, top: 20),
-              child: Column(
-                children: [
-                  Text(
-                    'اكاكوس',
-                    style: GoogleFonts.gulzar(
-                      fontSize: 50,
-                      fontWeight: FontWeight.w400,
-                      fontStyle: FontStyle.italic,
-                      color: mainColor,
+              ],
+            ),
+           
+          ),
+           PageViewModel(
+            titleWidget:Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Text(
+                      'اكاكوس',
+                      style: GoogleFonts.gulzar(
+                        fontSize: 50,
+                        fontWeight: FontWeight.w400,
+                        fontStyle: FontStyle.italic,
+                        color: mainColor,
+                      ),
                     ),
-                  ),
-                  Image.asset(
-                    'images/photo2.png',
-                  ),
-                  const SizedBox(
-                    height: 12,
-                  ),
-                  Text(
+            ),
+            bodyWidget:Stack(
+             alignment : AlignmentDirectional.bottomCenter,
+              children: [
+                Center(
+                  child: Image.asset('images/photo2.png', height: 280,),
+                ),
+                
+                 Text(
                     'احجز رحلات للمعالم المختلفة 🗿',
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.gulzar(
+                    style: TextStyle(
                       fontSize: 18,
-                      fontWeight: FontWeight.w700,
+                      fontWeight: FontWeight.w400,
                       color: mainColorText,
                     ),
                   ),
-                ],
-              ),
-            )),
-        PageViewModel(
-            title: '',
-            bodyWidget: Padding(
-              padding: const EdgeInsets.only(
-                  left: 10, right: 10, bottom: 20, top: 5),
-              child: Column(
-                children: [
-                  Text(
-                    'اكاكوس',
-                    style: GoogleFonts.gulzar(
-                      fontSize: 50,
-                      fontWeight: FontWeight.w400,
-                      fontStyle: FontStyle.italic,
-                      color: mainColor,
+              ],
+            ),
+           
+          ),
+           PageViewModel(
+            titleWidget:Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Text(
+                      'اكاكوس',
+                      style: GoogleFonts.gulzar(
+                        fontSize: 50,
+                        fontWeight: FontWeight.w400,
+                        fontStyle: FontStyle.italic,
+                        color: mainColor,
+                      ),
                     ),
-                  ),
-                  Image.asset('images/photo3.png'),
-                  const SizedBox(
-                    height: 12,
-                  ),
-                  Text(
+            ),
+            bodyWidget:Column(
+              // mainAxisSize :MainAxisSize.min,
+              children: [
+                Center(
+                  child: Image.asset('images/photo3.png',height: 168, ),
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                 Text(
                     'ترغب بزيارة مكان ما؟ تعرف على المطاعم والخدمات الموجودة بالقرب منه 🍔',
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.gulzar(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w700,
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
                       color: mainColorText,
                     ),
                   ),
-                ],
-              ),
-            )),
+              ],
+            ),
+           
+          ),
+       
+       
+       
+       
       ],
       skip: GestureDetector(
          onTap: () => Navigator.push(
           context,
-          CupertinoPageRoute(builder: (context) => const LogInScreen()),
+          CupertinoPageRoute(builder: (context) =>  const LogInScreen()),
         ),
         child: const ButtonScreen(
           isbackround: false,
           title: 'تخطي',
           widthh: 120,
+          heightt: 40,
+          paddingg: 5.5,
         ),
       ),
       next: GestureDetector(
@@ -134,6 +144,8 @@ class _SecondScreenState extends State<SecondScreen> {
           isbackround: true,
           title: 'التالي',
           widthh: 120,
+          heightt: 40,
+          paddingg: 5.5,
         ),
       ),
       done: GestureDetector(
@@ -145,6 +157,8 @@ class _SecondScreenState extends State<SecondScreen> {
           isbackround: true,
           title: 'دخول',
           widthh: 120,
+          heightt: 40,
+          paddingg: 5.5,
         ),
       ),
       onDone: () {},
