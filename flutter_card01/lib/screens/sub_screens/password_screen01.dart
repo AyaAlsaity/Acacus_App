@@ -93,7 +93,7 @@ class _PasswordScreen01State extends State<PasswordScreen01> {
                 ],
               ),
               const SizedBox(
-                height: 180,
+                height: 160,
               ),
               GestureDetector(
                 onTap: () {
@@ -119,14 +119,14 @@ class _PasswordScreen01State extends State<PasswordScreen01> {
               ),
               GestureDetector(
                 onTap: () {
-                  //  signIn();
-                  if (formkey1.currentState!.validate()) {
+                 
+                 
                     Navigator.pushReplacement(
                       context,
                       CupertinoPageRoute(
                           builder: (context) => const LogInScreen()),
                     );
-                  }
+                 
                 },
                 child: const ButtonScreen(
                   isbackround: false,

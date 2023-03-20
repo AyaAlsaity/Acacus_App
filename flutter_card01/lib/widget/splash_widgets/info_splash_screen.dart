@@ -15,10 +15,10 @@ class InfoSplash extends StatelessWidget {
           height: size.height * 0.4,
         ),
         Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: const EdgeInsets.only(right: 24,left: 24,top: 15,bottom: 20),
           child: Text(
             title,
-            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             textAlign: TextAlign.center,
             textDirection: TextDirection.rtl,
           ),

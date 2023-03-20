@@ -17,7 +17,7 @@ class SearchScreen extends StatelessWidget {
       ),
       // ignore: prefer_const_constructors
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(10.0),
         child: Stack(
           alignment : AlignmentDirectional.topEnd,
           children: [

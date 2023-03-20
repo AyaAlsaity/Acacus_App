@@ -34,7 +34,7 @@ class _FirstScreenState extends State<FirstScreen> {
         child: Text(
           'اكاكوس',
           style: GoogleFonts.gulzar(
-            fontSize: 50,
+            fontSize: 70,
             fontWeight: FontWeight.w400,
             fontStyle: FontStyle.italic,
             color: secondaryColorText,

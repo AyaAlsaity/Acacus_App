@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_card01/helpers/colors.dart';
 
@@ -14,6 +15,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  final user = FirebaseAuth.instance.currentUser!;
   List<DataModule> data = [
     DataModule(
       title: 'آثار المدينة القديمة',
@@ -68,21 +70,37 @@ class _MainScreenState extends State<MainScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CircleAvatar(
-                          backgroundColor:
-                              const Color.fromARGB(113, 255, 255, 255),
-                          child: Icon(
-                            Icons.star_border_outlined,
-                            color: secondaryColor02,
-                          )),
-                      CircleAvatar(
-                          backgroundColor:
-                              const Color.fromARGB(113, 255, 255, 255),
-                          child: Icon(
-                            Icons.heart_broken,
-                            color: secondaryColor02,
-                          )),
+                      Container(
+                        width: 30,
+                        height: 30,
+                         decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: const Color.fromARGB(113, 255, 255, 255),
+        border: Border.all(color: secondaryColor02, width: 1),
+      ),
+                        child: Icon(
+                          Icons.star_border_outlined,
+                          color: secondaryColor02,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Container(
+                        width: 30,
+                        height: 30,
+                         decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: const Color.fromARGB(113, 255, 255, 255),
+        border: Border.all(color: secondaryColor02, width: 1),
+      ),
+                        child: Icon(
+                          Icons.heart_broken,
+                          color: secondaryColor02,
+                        ),
+                      ),
                     ],
                   ),
                   Column(
@@ -200,8 +218,9 @@ class _MainScreenState extends State<MainScreen> {
                 height: 10,
               ),
               SizedBox(
-                  height: 520,
+                  height: 550,
                   child: GridView.builder(
+                    physics:const NeverScrollableScrollPhysics(),
                     itemCount: data.length,
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
@@ -229,6 +248,24 @@ class _MainScreenState extends State<MainScreen> {
                       );
                     },
                   )),
+                  const SizedBox(
+                    height: 35,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      InkWell(
+          child: const Icon(
+            Icons.logout,
+            color: Colors.red,
+          ),
+          onTap: () {
+            FirebaseAuth.instance.signOut();
+          },
+        ),
+                    ],
+                  ),
+
             ],
           ),
         ),

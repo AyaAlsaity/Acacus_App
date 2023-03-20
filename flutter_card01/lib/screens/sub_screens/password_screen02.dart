@@ -22,6 +22,7 @@ class _PasswordScreen02State extends State<PasswordScreen02> {
   TextEditingController newTextEditingController = TextEditingController();
   FocusNode focusNode = FocusNode();
   @override
+  // ignore: override_on_non_overriding_member
   var formkey2 = GlobalKey<FormState>();
   FocusNode focusNode1 = FocusNode();
 
@@ -84,7 +85,7 @@ class _PasswordScreen02State extends State<PasswordScreen02> {
                 height: 100,
               ),
               PinCodeFields(
-                length: 5,
+                length: 6,
                 fieldBorderStyle: FieldBorderStyle.square,
                 responsive: false,
                 fieldHeight: 40.0,
@@ -97,6 +98,7 @@ class _PasswordScreen02State extends State<PasswordScreen02> {
                 borderRadius: BorderRadius.circular(10.0),
                 keyboardType: TextInputType.number,
                 autoHideKeyboard: false,
+                margin : const EdgeInsets.all(1.0),
                 padding : const EdgeInsets.all( 5.0),
                 
                 
@@ -107,11 +109,11 @@ class _PasswordScreen02State extends State<PasswordScreen02> {
                 onComplete: (output) {},
               ),
               const SizedBox(
-                height: 180,
+                height: 160,
               ),
               GestureDetector(
                 onTap: () {
-                  //  signIn();
+                 
                   if (formkey2.currentState!.validate()) {
                     Navigator.pushReplacement(
                       context,
@@ -133,14 +135,14 @@ class _PasswordScreen02State extends State<PasswordScreen02> {
               ),
               GestureDetector(
                 onTap: () {
-                  //  signIn();
-                  if (formkey2.currentState!.validate()) {
+                  
+                 
                     Navigator.pushReplacement(
                       context,
                       CupertinoPageRoute(
                           builder: (context) => const PasswordScreen01()),
                     );
-                  }
+                  
                 },
                 child: const ButtonScreen(
                   isbackround: false,
