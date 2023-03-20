@@ -1,9 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_card01/screen/sininscreen.dart';
-import '../widget/button.dart';
-import '../widget/textformfield.dart';
-import 'homepage.dart';
+import 'package:flutter_card01/screens/sub_screens/sign_up_screen.dart';
+import '../../module/auth_screen.dart';
+import '../../widget/static_widgets/button.dart';
+import '../../widget/input_widgets/textformfield.dart';
+
+import 'password_screen01.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
@@ -13,11 +16,22 @@ class LogInScreen extends StatefulWidget {
 }
 
 class _LogInScreenState extends State<LogInScreen> {
-  // var emailController = TextEditingController();
-  // var passwordController = TextEditingController();
-  var formkey = GlobalKey<FormState>();
-  // bool ispasswordshow = true;
 
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+  var formkey = GlobalKey<FormState>();
+ 
+    Future signIn()async{
+    await FirebaseAuth.instance.signInWithEmailAndPassword(email: emailController.text.trim(), password: passwordController.text.trim());
+   }
+   
+    @override
+    void dispose(){
+      super.dispose();
+      emailController.dispose();
+      passwordController.dispose();
+    }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,12 +45,15 @@ class _LogInScreenState extends State<LogInScreen> {
                 alignment: AlignmentDirectional.bottomEnd,
                 children: [
                   Image.asset('images/photo5.jpg'),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15.0),
-                    child: Text(
-                      'مرحبا بك في تطبيق اكاكوس!',
-                      style: TextStyle(
-                        fontSize: 18,
+                  const Directionality(
+                    textDirection: TextDirection.rtl,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 15.0),
+                      child: Text(
+                        'مرحبا بك في تطبيق اكاكوس!',
+                        style: TextStyle(
+                          fontSize: 18,
+                        ),
                       ),
                     ),
                   ),
@@ -51,10 +68,10 @@ class _LogInScreenState extends State<LogInScreen> {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                    
-                    const TextFormFieldd(),
+                     TextFormFieldd(emailController: emailController,passwordController: passwordController,),
                     
                     const SizedBox(
-                      height: 20.0,
+                      height: 15.0,
                     ),
         
                     Row(
@@ -62,10 +79,10 @@ class _LogInScreenState extends State<LogInScreen> {
                       children: [
                         TextButton(
                           onPressed: (() {
-                            Navigator.push(
+                            Navigator.pushReplacement(
                               context,
                               CupertinoPageRoute(
-                                  builder: (context) => const HomePage()),
+                                  builder: (context) => const PasswordScreen01()),
                             );
                           }),
                           child: const Text(
@@ -94,11 +111,14 @@ class _LogInScreenState extends State<LogInScreen> {
                    
                     GestureDetector(
                       onTap: () {
+                      //  signIn();
                        if (formkey.currentState!.validate()) {
-                         Navigator.push(
+                         signIn();
+                        
+                         Navigator.pushReplacement(
                           context,
                           CupertinoPageRoute(
-                              builder: (context) => const HomePage()),
+                              builder: (context) => const AuthScreen()),
                         );
                        }
                           

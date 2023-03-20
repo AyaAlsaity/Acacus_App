@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_card01/screens/sub_screens/logo_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-import 'screen/firstscreen.dart';
 
-void main() {
+// import 'screens/sub_screens/logo_screen.dart';
+
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 

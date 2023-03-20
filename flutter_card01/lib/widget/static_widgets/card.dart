@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_card01/widget/button.dart';
+import 'package:flutter_card01/widget/static_widgets/button.dart';
 
 // ignore: must_be_immutable, camel_case_types
 class CardScreen extends StatefulWidget {
@@ -33,7 +33,7 @@ class _CardScreenState extends State<CardScreen> {
         children: [
           SizedBox(
             // height: 420,
-            // width: 300,
+            width: 320,
             child: Card(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20)),
@@ -51,7 +51,7 @@ class _CardScreenState extends State<CardScreen> {
                               topRight: Radius.circular(20),
                             ),
                             image: DecorationImage(
-                                image: NetworkImage(widget.image))),
+                                image: NetworkImage(widget.image),fit: BoxFit.fill)),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(10.0),

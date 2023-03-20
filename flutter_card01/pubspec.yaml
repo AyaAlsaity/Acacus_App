@@ -38,6 +38,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts:
   introduction_screen:
+  firebase_auth:
+  path_provider:
+  provider:
+  firebase_core:
+  google_sign_in:
+  flutter_pin_code_fields:
 
 dev_dependencies:
   flutter_test:
