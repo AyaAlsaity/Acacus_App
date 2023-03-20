@@ -19,42 +19,28 @@ class MinCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
+          // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
             height: 5,
           ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment : CrossAxisAlignment.center,
               
               children: [
-              Row(
-                
-                
-                children: const [
-                  Icon(
-                    Icons.star_outline_rounded,
-                    size: 25,
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Directionality(
-                    textDirection: TextDirection.rtl,
-                    child: Text(
-                      ' 4.2',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                ],
+                Container(
+                width: 70,
+                height: 80,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    image: DecorationImage(image: NetworkImage(image),fit: BoxFit.fill)),
               ),
-              const SizedBox(
+             const SizedBox(
                 width: 15,
               ),
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Directionality(
                     textDirection: TextDirection.rtl,
@@ -70,6 +56,7 @@ class MinCard extends StatelessWidget {
                   Row(
                     
                     children: const [
+                      Icon(Icons.location_on,color: Colors.red,size: 16,),
                       Directionality(
                         textDirection: TextDirection.rtl,
                         child: Text(
@@ -81,7 +68,7 @@ class MinCard extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Icon(Icons.wrong_location,color: Colors.red,),
+                      
                     ],
                   ),
                 ],
@@ -89,14 +76,41 @@ class MinCard extends StatelessWidget {
                const SizedBox(
                 width: 15,
               ),
-              Container(
-                width: 70,
-                height: 80,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    image: DecorationImage(image: NetworkImage(image),fit: BoxFit.fill)),
+               Padding(
+                 padding: const EdgeInsets.only(bottom: 20),
+                 child: Row(
+                  
+                  // crossAxisAlignment : CrossAxisAlignment.start,
+                  
+                  children: const [
+
+                    
+                     Directionality(
+                      textDirection: TextDirection.rtl,
+                      child: Text(
+                        ' 4.2',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(bottom: 8),
+                      child: Icon(
+                        Icons.star_outline_rounded,
+                        size: 25,
+                      ),
+                    ),
+                   
+                  ],
               ),
-            ]),
+               ),
+              
+              ]),
              
           ],
         ),

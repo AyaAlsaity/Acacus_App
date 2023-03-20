@@ -21,7 +21,9 @@ class _SinInScreenState extends State<SinInScreen> {
   // var emailController = TextEditingController();
   // var passwordController = TextEditingController();
   var formkey = GlobalKey<FormState>();
-  bool ispasswordshow = true;
+   bool ispasswordshow = true;
+  bool enableLoginBtn = false;
+
 
   Future signUp() async {
     if (passwordConfirmed()) {
@@ -32,15 +34,15 @@ class _SinInScreenState extends State<SinInScreen> {
       // ignore: use_build_context_synchronously
       // Navigator.of(context).pushNamed('/');
     }
-    
   }
-  bool passwordConfirmed(){
-      if(passwordController.text.trim()==passwordController2.text.trim()){
-         return true;
-      }else{
-        return false;
-      }
+
+  bool passwordConfirmed() {
+    if (passwordController.text.trim() == passwordController2.text.trim()) {
+      return true;
+    } else {
+      return false;
     }
+  }
 
   @override
   void dispose() {
@@ -56,6 +58,11 @@ class _SinInScreenState extends State<SinInScreen> {
       body: SingleChildScrollView(
         child: Form(
           key: formkey,
+          onChanged: () {
+                  setState(() {
+                    enableLoginBtn = formkey.currentState!.validate();
+                  });
+                },
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
@@ -97,71 +104,70 @@ class _SinInScreenState extends State<SinInScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    TextFormFieldd(
-                      emailController: emailController,
-                      passwordController: passwordController,
+                   
+                     TextFieldWidget(
+                      label: 'البريد الإلكتروني',
+                      controller: emailController,
+                      keyboardType:TextInputType.emailAddress,
+                      hintText: 'أدخل البريد الالكتروني',
+                      validator: (String? value) {
+                        if (value!.isEmpty) {
+                          return "الرجاء ادخال البريد الالكتروني";
+                        }
+                        if (!value.contains('@') || !value.contains('.com')) {
+                          return "الرجاء ادخال البريد الالكتروني بشكل صحيح";
+                        }
+                        return null;
+                      },ispassword: false,
                     ),
-                    const SizedBox(
-                      height: 10.0,
+                    TextFieldWidget(
+                      label: 'كلمة المرور',
+                      hintText: 'أدخل كلمة المرور',
+                      controller: passwordController,
+                      keyboardType:TextInputType.visiblePassword,
+                      validator: (String? value) {
+                        if (value!.isEmpty) {
+                          return "الرجاء ادخال كلمة المرور";
+                        }
+                        if (value.length < 8) {
+                          return "كلمة المرور يجب ان تكون اكثر من 8 احرف";
+                        }
+                        return null;
+                      }, ispassword: true,
+                          
                     ),
-                    const Text(
-                      'تأكيد كلمة المرور',
-                      textAlign: TextAlign.end,
-                      style: TextStyle(
-                        fontSize: 16,
-                      ),
+                    TextFieldWidget(
+                      label: 'كلمة المرور',
+                      hintText: 'أدخل كلمة المرور',
+                      controller: passwordController2,
+                      keyboardType:TextInputType.visiblePassword,
+                      validator: (String? value) {
+                        if (value!.isEmpty) {
+                          return "الرجاء ادخال كلمة المرور";
+                        }
+                        if (value.length < 8) {
+                          return "كلمة المرور يجب ان تكون اكثر من 8 احرف";
+                        }
+                        return null;
+                      }, ispassword: true,
+                          
                     ),
-                    const SizedBox(
-                      height: 5.0,
-                    ),
-                    Directionality(
-                      textDirection: TextDirection.rtl,
-                      child: TextFormField(
-                        controller: passwordController2,
-                        keyboardType: TextInputType.visiblePassword,
-                        obscureText: ispasswordshow,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'حقل مطلوب';
-                          }
-                          return null;
-                        },
-                        decoration: InputDecoration(
-                          labelText: '********',
-                          suffixIcon: IconButton(
-                            onPressed: () {
-                              setState(() {
-                                ispasswordshow = !ispasswordshow;
-                              });
-                            },
-                            icon: Icon(
-                              ispasswordshow
-                                  ? Icons.visibility
-                                  : Icons.visibility_off,
-                            ),
-                          ),
-                          border: const OutlineInputBorder(),
-                        ),
-                      ),
-                    ),
+                    
                     const SizedBox(
                       height: 40.0,
                     ),
                     GestureDetector(
                       onTap: () {
-                        
-                         if (formkey.currentState!.validate()) {
-                          
-                           if (formkey.currentState!.validate()) {
-                        
-                        signUp();
-                         Navigator.pushReplacement(
-                          context,
-                          CupertinoPageRoute(
-                              builder: (context) => const AuthScreen()),
-                        );
-                       }
-                         }
+                        if (formkey.currentState!.validate()) {
+                          if (formkey.currentState!.validate()) {
+                            signUp();
+                            Navigator.pushReplacement(
+                              context,
+                              CupertinoPageRoute(
+                                  builder: (context) => const AuthScreen()),
+                            );
+                          }
+                        }
                       },
                       child: const ButtonScreen(
                         isbackround: true,

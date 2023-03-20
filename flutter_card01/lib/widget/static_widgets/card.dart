@@ -6,12 +6,13 @@ class CardScreen extends StatefulWidget {
   String title;
   String dectitle;
   String image;
-
+bool expandable ;
   CardScreen({
     Key? key,
     required this.title,
     required this.dectitle,
     required this.image,
+     this.expandable = true,
   }) : super(key: key);
 
   @override
@@ -27,7 +28,7 @@ class _CardScreenState extends State<CardScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.symmetric(horizontal: 10,),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
@@ -37,10 +38,11 @@ class _CardScreenState extends State<CardScreen> {
             child: Card(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20)),
-              elevation: 8,
+              elevation: 1.5,
               child: Column(
                 children: [
                   Stack(
+                    alignment :AlignmentDirectional.topEnd,
                     children: [
                       Container(
                         width: 400,
@@ -66,8 +68,8 @@ class _CardScreenState extends State<CardScreen> {
                               backgroundColor:
                                   const Color.fromARGB(113, 255, 255, 255),
                               child: Icon(
-                                isOk1 ? Icons.star : Icons.star_outline_rounded,
-                                color: Colors.amber,
+                                isOk1 ? Icons.favorite : Icons.favorite_border_outlined,
+                                color: Colors.white,
                               )),
                         ),
                       )
@@ -76,11 +78,35 @@ class _CardScreenState extends State<CardScreen> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
+                             Row(
+                              children: [
+                                Text(
+                                  widget.title,
+                                  style: const TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 5,
+                                ),
+                                const Text(
+                                  'طرابلس الغرب',
+                                  style: TextStyle(
+                                    fontSize: 10,
+                                    color: Color.fromARGB(104, 0, 0, 0),
+                                  ),
+                                ),
+                                
+                                
+                              ],
+                            ),
+                          
                             Row(
                               // ignore: prefer_const_literals_to_create_immutables
                               children: [
@@ -100,42 +126,22 @@ class _CardScreenState extends State<CardScreen> {
                                 )
                               ],
                             ),
-                            Row(
-                              children: [
-                                const Text(
-                                  'طرابلس الغرب',
-                                  style: TextStyle(
-                                    fontSize: 10,
-                                    color: Color.fromARGB(104, 0, 0, 0),
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 5,
-                                ),
-                                Text(
-                                  widget.title,
-                                  style: const TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
+                           ],
                         ),
                         const SizedBox(
                           height: 8,
                         ),
                         InkWell(
                           onTap: () {
-                            setState(() {
+                            if(widget.expandable){    setState(() {
                               isOk = !isOk;
                               isOk ? maxline = 10 : maxline = 2;
-                            });
+                            });}
+                        
                           },
                           child: Text(
                             widget.dectitle,
-                            textAlign: TextAlign.end,
+                            textAlign: TextAlign.start,
                             softWrap: true,
                             maxLines: maxline,
                             style: const TextStyle(

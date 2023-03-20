@@ -21,6 +21,7 @@ class _LogInScreenState extends State<LogInScreen> {
   TextEditingController passwordController = TextEditingController();
 
   var formkey = GlobalKey<FormState>();
+  bool enableLoginBtn = false;
  
     Future signIn()async{
     await FirebaseAuth.instance.signInWithEmailAndPassword(email: emailController.text.trim(), password: passwordController.text.trim());
@@ -38,6 +39,11 @@ class _LogInScreenState extends State<LogInScreen> {
       body: SingleChildScrollView(
         child: Form(
           key: formkey,
+          onChanged: () {
+                  setState(() {
+                    enableLoginBtn = formkey.currentState!.validate();
+                  });
+                },
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
@@ -67,8 +73,39 @@ class _LogInScreenState extends State<LogInScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
+                    TextFieldWidget(
+                      label: 'البريد الإلكتروني',
+                      controller: emailController,
+                      keyboardType:TextInputType.emailAddress,
+                      hintText: 'أدخل البريد الالكتروني',
+                      validator: (String? value) {
+                        if (value!.isEmpty) {
+                          return "الرجاء ادخال البريد الالكتروني";
+                        }
+                        if (!value.contains('@') || !value.contains('.com')) {
+                          return "الرجاء ادخال البريد الالكتروني بشكل صحيح";
+                        }
+                        return null;
+                      },ispassword: false,
+                    ),
+                    TextFieldWidget(
+                      label: 'كلمة المرور',
+                      hintText: 'أدخل كلمة المرور',
+                      controller: passwordController,
+                      keyboardType:TextInputType.visiblePassword,
+                      validator: (String? value) {
+                        if (value!.isEmpty) {
+                          return "الرجاء ادخال كلمة المرور";
+                        }
+                        if (value.length < 8) {
+                          return "كلمة المرور يجب ان تكون اكثر من 8 احرف";
+                        }
+                        return null;
+                      }, ispassword: true,
+                          
+                    ),
                    
-                     TextFormFieldd(emailController: emailController,passwordController: passwordController,),
+                    //  TextFieldWidget(emailController: emailController,passwordController: passwordController,),
                     
                     const SizedBox(
                       height: 15.0,
