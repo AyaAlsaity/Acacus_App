@@ -3,7 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 
-import '../screens/main_screens/main_screen.dart';
+// import '../screens/main_screens/main_screen.dart';
+import '../screens/main_screens/tabs_screen.dart';
 import '../screens/sub_screens/sign_in_screen.dart';
 
 class AuthScreen extends StatelessWidget {
@@ -17,7 +18,7 @@ class AuthScreen extends StatelessWidget {
         
         builder: (context, snapshot) {
           if(snapshot.hasData){
-            return const MainScreen();
+            return const TabsScreen();
           }else{
             return const LogInScreen();
           }

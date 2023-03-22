@@ -12,6 +12,7 @@ class TextFieldWidget extends StatefulWidget {
       required this.validator,
       required this.hintText,
       this.obSecureText = false,
+      this.readOnlyy=false,
       this.perfix, required this.ispassword, required this.keyboardType});
   final TextEditingController controller;
   final String? label;
@@ -21,6 +22,7 @@ class TextFieldWidget extends StatefulWidget {
   final TextInputType keyboardType;
 
   final bool obSecureText;
+  final bool readOnlyy;
   final Widget? perfix;
   @override
   State<TextFieldWidget> createState() => _TextFieldWidgetState();
@@ -57,6 +59,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
                 validator: widget.validator,
                 obscureText: widget.ispassword? ispasswordshow:widget.obSecureText,
                 keyboardType:widget.keyboardType,
+                readOnly :widget.readOnlyy,
 
                 decoration: InputDecoration(
               

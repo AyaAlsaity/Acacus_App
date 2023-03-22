@@ -1,8 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../helpers/colors.dart';
 import '../../module/data_module.dart';
 import '../../widget/static_widgets/card.dart';
+import '../sub_screens/search_screen.dart';
+import 'main_screen.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -49,33 +54,68 @@ class _HomePageState extends State<HomePage> {
   ];
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        leading: InkWell(
-          child: const Icon(
-            Icons.logout,
-            color: Colors.red,
-          ),
-          onTap: () {
-            FirebaseAuth.instance.signOut();
-          },
+       actions: [
+       Padding(
+         padding: const EdgeInsets.only(left: 10,right: 10,top: 5),
+         child: InkWell(
+           child: Image.asset(
+                    'assets/icons/back.png',
+                    width: size.width / 10,
+                    height: size.width / 10,
+                    fit: BoxFit.contain,),
+                    onTap: () {
+                        Navigator.pushReplacement(
+                              context,
+                              CupertinoPageRoute(
+                                  builder: (context) => const SearchScreen()),
+                            );
+                    },
+         ),
+       ),
+       ],
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+             Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 10,vertical: 10
+              ),
+              child: Divider(
+                height: 1.5,
+                color: mainColorText01.withOpacity(0.3),
+              ),
+            ),
+           
+            const SizedBox(
+              height: 12,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: SizedBox(
+                height: 600,
+                child: Directionality(
+                  textDirection: TextDirection.rtl,
+                  child: ListView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: data.length,
+                  itemBuilder: (context, index) {
+                    return CardScreen(
+                      title: data[index].title.toString(),
+                      dectitle: data[index].dectitle.toString(),
+                      image: data[index].image.toString(),
+                    );
+                  }),
+                ),
+              ),
+            ),
+          ],
         ),
-        title: const Text('Aya Alsaity'),
-        centerTitle: true,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: ListView.builder(
-            scrollDirection: Axis.vertical,
-            itemCount: data.length,
-            itemBuilder: (context, index) {
-              return CardScreen(
-                title: data[index].title.toString(),
-                dectitle: data[index].dectitle.toString(),
-                image: data[index].image.toString(),
-              );
-            }),
-      ),
+      )
     );
   }
 }

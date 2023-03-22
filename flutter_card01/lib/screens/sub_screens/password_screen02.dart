@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_card01/screens/sub_screens/password_screen01.dart';
-import 'package:flutter_card01/screens/sub_screens/sign_in_screen.dart';
 import 'package:flutter_pin_code_fields/flutter_pin_code_fields.dart';
 
 import '../../helpers/colors.dart';
-import '../../widget/static_widgets/button.dart';
+import '../../widget/clickable_widgets/button.dart';
+import 'password_screen01.dart';
+import 'sign_in_screen.dart';
 
 class PasswordScreen02 extends StatefulWidget {
   const PasswordScreen02({

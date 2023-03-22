@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_card01/widget/static_widgets/button.dart';
+
+import '../clickable_widgets/button.dart';
 
 // ignore: must_be_immutable, camel_case_types
 class CardScreen extends StatefulWidget {
@@ -163,7 +164,7 @@ class _CardScreenState extends State<CardScreen> {
                           //   });
                           // },
                           child: const ButtonScreen(
-                            isbackround: true,
+                            isbackround: false,
                             title: 'معرفة المزيد',
                             widthh: 120,
                             heightt: 40,

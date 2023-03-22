@@ -1,12 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_card01/screens/sub_screens/sign_up_screen.dart';
+
 import '../../module/auth_screen.dart';
-import '../../widget/static_widgets/button.dart';
+import '../../widget/clickable_widgets/button.dart';
 import '../../widget/input_widgets/textformfield.dart';
 
 import 'password_screen01.dart';
+import 'sign_up_screen.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
@@ -50,7 +51,7 @@ class _LogInScreenState extends State<LogInScreen> {
               Stack(
                 alignment: AlignmentDirectional.bottomEnd,
                 children: [
-                  Image.asset('images/photo5.jpg'),
+                  Image.asset('assets/images/photo5.jpg'),
                   const Directionality(
                     textDirection: TextDirection.rtl,
                     child: Padding(

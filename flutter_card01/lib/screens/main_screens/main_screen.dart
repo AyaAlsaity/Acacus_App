@@ -1,12 +1,17 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_card01/helpers/colors.dart';
 
+
+import '../../helpers/colors.dart';
 import '../../module/data_module.dart';
 import '../../widget/input_widgets/textformfield.dart';
 import '../../widget/static_widgets/card.dart';
 import '../../widget/static_widgets/min_card.dart';
-import '../../widget/static_widgets/search_widgets.dart';
+import '../sub_screens/search_screen.dart';
+import '../sub_screens/sign_in_screen.dart';
+
+// import '../../widget/static_widgets/search_widgets.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -100,7 +105,15 @@ class _MainScreenState extends State<MainScreen> {
           'https://admin.topsarabia.com/rankimg/3663a9a2-8857-4670-bd85-a5e3395754cf.jpg',
     ),
   ];
+  int currentIndex = 0;
+  
  
+   Future <LogInScreen> signOut()  async{
+    await FirebaseAuth.instance.signOut();
+
+    return const LogInScreen();
+}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -108,12 +121,12 @@ class _MainScreenState extends State<MainScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 10,right: 10,top: 50),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 10, right: 10, top: 15),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
@@ -122,7 +135,9 @@ class _MainScreenState extends State<MainScreen> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: const Color.fromARGB(113, 255, 255, 255),
-                          border: Border.all(color: const Color.fromARGB(40, 42, 33, 33), width: 1),
+                          border: Border.all(
+                              color: const Color.fromARGB(40, 42, 33, 33),
+                              width: 1),
                         ),
                         child: Icon(
                           Icons.star_border_outlined,
@@ -138,7 +153,9 @@ class _MainScreenState extends State<MainScreen> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: const Color.fromARGB(113, 255, 255, 255),
-                          border: Border.all(color: const Color.fromARGB(40, 42, 33, 33), width: 1),
+                          border: Border.all(
+                              color: const Color.fromARGB(40, 42, 33, 33),
+                              width: 1),
                         ),
                         child: Icon(
                           Icons.favorite_border_outlined,
@@ -147,7 +164,10 @@ class _MainScreenState extends State<MainScreen> {
                       ),
                     ],
                   ),
-                  Column(
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10, right: 10, top: 50),
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: const [
                       Directionality(
@@ -161,9 +181,9 @@ class _MainScreenState extends State<MainScreen> {
                           ),
                         ),
                       ),
-                       SizedBox(
-                height: 10,
-              ),
+                      SizedBox(
+                        height: 10,
+                      ),
                       Directionality(
                         textDirection: TextDirection.rtl,
                         child: Text(
@@ -177,8 +197,8 @@ class _MainScreenState extends State<MainScreen> {
                       ),
                     ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
             // const SizedBox(
             //   height: 20,
@@ -189,13 +209,24 @@ class _MainScreenState extends State<MainScreen> {
               child: TextFieldWidget(
                 hintText: 'ابحث عن معلم، مدينة، او فندق',
                 controller: searchController,
-                keyboardType: TextInputType.visiblePassword,
+                keyboardType: TextInputType.name,
+                readOnlyy:true,
                 validator: (String? value) {
-                 
                   return null;
                 },
                 ispassword: false,
-                perfix:const Icon( Icons.search,),
+                perfix:  InkWell(
+                  child: const Icon(
+                    Icons.search,
+                  ),
+                  onTap:() {
+                    Navigator.push(
+                              context,
+                              CupertinoPageRoute(
+                                  builder: (context) => const SearchScreen()),
+                            );
+                  },
+                ),
               ),
             ),
 
@@ -203,7 +234,9 @@ class _MainScreenState extends State<MainScreen> {
               height: 5,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10, ),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 10,
+              ),
               child: Divider(
                 height: 1.5,
                 color: mainColorText01.withOpacity(0.3),
@@ -213,8 +246,10 @@ class _MainScreenState extends State<MainScreen> {
               height: 22,
             ),
             const Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 10,),
-              child:  Directionality(
+              padding: EdgeInsets.symmetric(
+                horizontal: 10,
+              ),
+              child: Directionality(
                 textDirection: TextDirection.rtl,
                 child: Text(
                   'بالقرب مني',
@@ -248,9 +283,11 @@ class _MainScreenState extends State<MainScreen> {
             const SizedBox(
               height: 22,
             ),
-             const Padding(
-               padding:  EdgeInsets.symmetric(horizontal: 10,),
-               child: Directionality(
+            const Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 10,
+              ),
+              child: Directionality(
                 textDirection: TextDirection.rtl,
                 child: Text(
                   'الاكثر شهرة',
@@ -260,8 +297,8 @@ class _MainScreenState extends State<MainScreen> {
                     fontWeight: FontWeight.w700,
                   ),
                 ),
+              ),
             ),
-             ),
             const SizedBox(
               height: 5,
             ),
@@ -282,9 +319,11 @@ class _MainScreenState extends State<MainScreen> {
                     }),
               ),
             ),
-             const Padding(
-               padding:  EdgeInsets.symmetric(horizontal: 10,),
-               child: Directionality(
+            const Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 10,
+              ),
+              child: Directionality(
                 textDirection: TextDirection.rtl,
                 child: Text(
                   'تصفح حسب المدن',
@@ -294,11 +333,13 @@ class _MainScreenState extends State<MainScreen> {
                     fontWeight: FontWeight.w700,
                   ),
                 ),
+              ),
             ),
-             ),
-           
+
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8,),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 10,
+              ),
               child: SizedBox(
                   height: 600,
                   child: GridView.builder(
@@ -347,9 +388,10 @@ class _MainScreenState extends State<MainScreen> {
                   child: const Icon(
                     Icons.logout,
                     color: Colors.red,
+                    size: 35,
                   ),
                   onTap: () {
-                    FirebaseAuth.instance.signOut();
+                    signOut();
                   },
                 ),
               ],
@@ -357,6 +399,7 @@ class _MainScreenState extends State<MainScreen> {
           ],
         ),
       ),
+    
     );
   }
 }

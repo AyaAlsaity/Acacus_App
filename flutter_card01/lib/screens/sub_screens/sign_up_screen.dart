@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../module/auth_screen.dart';
-import '../../widget/static_widgets/button.dart';
+import '../../widget/clickable_widgets/button.dart';
 import '../../widget/input_widgets/textformfield.dart';
 import 'sign_in_screen.dart';
 
@@ -69,7 +69,7 @@ class _SinInScreenState extends State<SinInScreen> {
               Stack(
                 alignment: AlignmentDirectional.bottomEnd,
                 children: [
-                  Image.asset('images/photo4.jpg'),
+                  Image.asset('assets/images/photo4.jpg'),
                   Directionality(
                     textDirection: TextDirection.rtl,
                     child: Padding(

@@ -1,14 +1,14 @@
 import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_card01/screens/main_screens/home_screen.dart';
-import 'package:flutter_card01/screens/main_screens/main_screen.dart';
+// import 'package:flutter_card01/screens/main_screens/home_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../helpers/colors.dart';
+import '../main_screens/tabs_screen.dart';
 import 'splash_screen.dart';
 
 class FirstScreen extends StatefulWidget {
@@ -27,7 +27,7 @@ class _FirstScreenState extends State<FirstScreen> {
        Navigator.pushReplacement(
             context,
             CupertinoPageRoute(
-              builder: (context) =>  auth.currentUser != null ? const MainScreen(): const SplashScreen(),
+              builder: (context) =>  auth.currentUser != null ? const TabsScreen(): const SplashScreen(),
             ));
     });
     super.initState();

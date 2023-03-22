@@ -1,11 +1,12 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_card01/screens/sub_screens/sign_in_screen.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 import '../../helpers/colors.dart';
 import '../../widget/splash_widgets/info_splash_screen.dart';
+import 'sign_in_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -22,12 +23,12 @@ class _SplashScreenState extends State<SplashScreen> {
 
     List<Widget> listPagesViewModel = const [
       InfoSplash(
-          image: 'images/photo1.png',
+          image: 'assets/images/photo1.png',
           title: 'اكتشف جمال بلادنا الحبيبة ليبيا 🇱🇾'),
       InfoSplash(
-          image: 'images/photo2.png', title: 'احجز رحلات للمعالم المختلفة 🗿'),
+          image: 'assets/images/photo2.png', title: 'احجز رحلات للمعالم المختلفة 🗿'),
       InfoSplash(
-          image: 'images/photo3.png',
+          image: 'assets/images/photo3.png',
           title:
               'ترغب بزيارة مكان ما؟ تعرف على المطاعم والخدمات الموجودة بالقرب منه 🍔'),
     ];
