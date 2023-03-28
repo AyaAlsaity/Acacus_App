@@ -29,26 +29,20 @@ class _PasswordScreen01State extends State<PasswordScreen01> {
             children: [
               Column(
                 children: const [
-                  Directionality(
-                    textDirection: TextDirection.rtl,
-                    child: Text(
-                      'اعادة تعيين كلمة السر',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                      ),
+                  Text(
+                    'اعادة تعيين كلمة السر',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
-                  Directionality(
-                    textDirection: TextDirection.rtl,
-                    child: Text(
-                      textAlign: TextAlign.center,
-                      'قم بادخال البريد الالكتروني لاستلام رمز التأكيد',
-                      style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w400,
-                      ),
+                  Text(
+                    textAlign: TextAlign.center,
+                    'قم بادخال البريد الالكتروني لاستلام رمز التأكيد',
+                    style: TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                 ],
@@ -59,36 +53,30 @@ class _PasswordScreen01State extends State<PasswordScreen01> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  const Directionality(
-                    textDirection: TextDirection.rtl,
-                    child: Text(
-                      'البريد الالكتروني',
-                      textAlign: TextAlign.end,
-                      style: TextStyle(
-                        fontSize: 16,
-                      ),
+                  const Text(
+                    'البريد الالكتروني',
+                    textAlign: TextAlign.end,
+                    style: TextStyle(
+                      fontSize: 16,
                     ),
                   ),
                   const SizedBox(
                     height: 5,
                   ),
-                  Directionality(
-                    textDirection: TextDirection.rtl,
-                    child: TextFormField(
-                      controller: emailController,
-                      keyboardType: TextInputType.emailAddress,
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return 'حقل مطلوب';
-                        }
-                        return null;
-                      },
-                      decoration: const InputDecoration(
-                        
-                        labelText: 'email@gmail.com',
-                        // prefixIcon: Icon(Icons.email),
-                        border: OutlineInputBorder(),
-                      ),
+                  TextFormField(
+                    controller: emailController,
+                    keyboardType: TextInputType.emailAddress,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'حقل مطلوب';
+                      }
+                      return null;
+                    },
+                    decoration: const InputDecoration(
+                      
+                      labelText: 'email@gmail.com',
+                      // prefixIcon: Icon(Icons.email),
+                      border: OutlineInputBorder(),
                     ),
                   ),
                 ],

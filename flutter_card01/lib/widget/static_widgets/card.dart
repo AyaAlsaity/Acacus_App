@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../clickable_widgets/button.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 // ignore: must_be_immutable, camel_case_types
 class CardScreen extends StatefulWidget {
@@ -163,9 +164,9 @@ class _CardScreenState extends State<CardScreen> {
                           //     isOk ? maxline = 10 : maxline = 2;
                           //   });
                           // },
-                          child: const ButtonScreen(
+                          child:  ButtonScreen(
                             isbackround: false,
-                            title: 'معرفة المزيد',
+                            title:  AppLocalizations.of(context)!.butt2,
                             widthh: 120,
                             heightt: 40,
                             paddingg: 5.5,

@@ -32,72 +32,69 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
   bool ispasswordshow = true;
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8),
-        child: Column(
-          children: [
-            if (widget.label != null)
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    widget.label ?? "",
-                    style: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.w600),
-                  ),
-                ],
-              ),
-            const SizedBox(
-              height: 5,
-            ),
-            
-            TextFormField(
-                controller: widget.controller,
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                validator: widget.validator,
-                obscureText: widget.ispassword? ispasswordshow:widget.obSecureText,
-                keyboardType:widget.keyboardType,
-                readOnly :widget.readOnlyy,
-
-                decoration: InputDecoration(
-              
-                  contentPadding: const EdgeInsets.symmetric(
-                      vertical: 13.0, horizontal: 16),
-                  suffixIcon:widget.ispassword? IconButton(
-                onPressed: () {
-                  setState(() {
-                    ispasswordshow = !ispasswordshow;
-                  });
-                },
-                icon: Icon(
-                  // ignore: dead_code
-                  ispasswordshow ? Icons.visibility : Icons.visibility_off,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8),
+      child: Column(
+        children: [
+          if (widget.label != null)
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  widget.label ?? "",
+                  style: const TextStyle(
+                      fontSize: 16, fontWeight: FontWeight.w600),
                 ),
-              ):widget.perfix,
-                  fillColor: mainColor.withOpacity(0.2),
-                  filled: true,
-                  hintText: widget.hintText,
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16),
-                      borderSide:
-                          BorderSide(color: mainColor.withOpacity(0.2))),
-                  focusColor: mainColor.withOpacity(0.2),
-                  errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16),
-                      borderSide: const BorderSide(color: Colors.red)),
-                  focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16),
-                      borderSide:
-                          BorderSide(color: mainColor.withOpacity(0.4))),
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16),
-                      borderSide:
-                          BorderSide(color: mainColor.withOpacity(0.2))),
-                ))
-          ],
-        ),
+              ],
+            ),
+          const SizedBox(
+            height: 5,
+          ),
+          
+          TextFormField(
+              controller: widget.controller,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              validator: widget.validator,
+              obscureText: widget.ispassword? ispasswordshow:widget.obSecureText,
+              keyboardType:widget.keyboardType,
+              readOnly :widget.readOnlyy,
+
+              decoration: InputDecoration(
+            
+                contentPadding: const EdgeInsets.symmetric(
+                    vertical: 13.0, horizontal: 16),
+                suffixIcon:widget.ispassword? IconButton(
+              onPressed: () {
+                setState(() {
+                  ispasswordshow = !ispasswordshow;
+                });
+              },
+              icon: Icon(
+                // ignore: dead_code
+                ispasswordshow ? Icons.visibility : Icons.visibility_off,
+              ),
+            ):widget.perfix,
+                fillColor: mainColor.withOpacity(0.2),
+                filled: true,
+                hintText: widget.hintText,
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16),
+                    borderSide:
+                        BorderSide(color: mainColor.withOpacity(0.2))),
+                focusColor: mainColor.withOpacity(0.2),
+                errorBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16),
+                    borderSide: const BorderSide(color: Colors.red)),
+                focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16),
+                    borderSide:
+                        BorderSide(color: mainColor.withOpacity(0.4))),
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16),
+                    borderSide:
+                        BorderSide(color: mainColor.withOpacity(0.2))),
+              ))
+        ],
       ),
     );
   }

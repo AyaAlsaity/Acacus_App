@@ -2,12 +2,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../main.dart';
 import '../../module/auth_screen.dart';
 import '../../widget/clickable_widgets/button.dart';
 import '../../widget/input_widgets/textformfield.dart';
 
 import 'password_screen01.dart';
 import 'sign_up_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
@@ -52,16 +54,27 @@ class _LogInScreenState extends State<LogInScreen> {
                 alignment: AlignmentDirectional.bottomEnd,
                 children: [
                   Image.asset('assets/images/photo5.jpg'),
-                  const Directionality(
-                    textDirection: TextDirection.rtl,
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 15.0),
-                      child: Text(
-                        'مرحبا بك في تطبيق اكاكوس!',
-                        style: TextStyle(
-                          fontSize: 18,
+                    Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                    child: Row(
+                      children: [
+
+                        Text(
+                          AppLocalizations.of(context)!.loginhi,
+                          style: const TextStyle(
+                            fontSize: 18,
+                          ),
                         ),
+                         IconButton(
+
+                        onPressed: () {
+                          AppLocalizations.of(context)!.localeName == 'ar'
+                              ? MyApp.setLocale(context, const Locale('en'))
+                              : MyApp.setLocale(context, const Locale('ar'));
+                        },
+                        icon:const Icon(Icons.language),
                       ),
+                      ],
                     ),
                   ),
                 ],
@@ -75,31 +88,31 @@ class _LogInScreenState extends State<LogInScreen> {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     TextFieldWidget(
-                      label: 'البريد الإلكتروني',
+                      label: AppLocalizations.of(context)!.email1,
                       controller: emailController,
                       keyboardType:TextInputType.emailAddress,
-                      hintText: 'أدخل البريد الالكتروني',
+                      hintText: AppLocalizations.of(context)!.email2,
                       validator: (String? value) {
                         if (value!.isEmpty) {
-                          return "الرجاء ادخال البريد الالكتروني";
+                          return AppLocalizations.of(context)!.email3;
                         }
                         if (!value.contains('@') || !value.contains('.com')) {
-                          return "الرجاء ادخال البريد الالكتروني بشكل صحيح";
+                          return AppLocalizations.of(context)!.email4;
                         }
                         return null;
                       },ispassword: false,
                     ),
                     TextFieldWidget(
-                      label: 'كلمة المرور',
-                      hintText: 'أدخل كلمة المرور',
+                      label: AppLocalizations.of(context)!.pass1,
+                      hintText: AppLocalizations.of(context)!.pass2,
                       controller: passwordController,
                       keyboardType:TextInputType.visiblePassword,
                       validator: (String? value) {
                         if (value!.isEmpty) {
-                          return "الرجاء ادخال كلمة المرور";
+                          return AppLocalizations.of(context)!.pass3;
                         }
                         if (value.length < 8) {
-                          return "كلمة المرور يجب ان تكون اكثر من 8 احرف";
+                          return AppLocalizations.of(context)!.pass4;
                         }
                         return null;
                       }, ispassword: true,
@@ -113,7 +126,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     ),
         
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      // mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         TextButton(
                           onPressed: (() {
@@ -123,19 +136,19 @@ class _LogInScreenState extends State<LogInScreen> {
                                   builder: (context) => const PasswordScreen01()),
                             );
                           }),
-                          child: const Text(
-                            'اعادة تعيين',
-                            textAlign: TextAlign.end,
-                            style: TextStyle(
+                          child:  Text(
+                            AppLocalizations.of(context)!.forgot2,
+                            // textAlign: TextAlign.end,
+                            style: const TextStyle(
                               fontSize: 14,
                               color: Colors.blue,
                             ),
                           ),
                         ),
-                        const Text(
-                          'نسيت كلمة المرور؟',
-                          textAlign: TextAlign.end,
-                          style: TextStyle(
+                         Text(
+                          AppLocalizations.of(context)!.forgot1,
+                          // textAlign: TextAlign.end,
+                          style:const TextStyle(
                             fontSize: 14,
                           ),
                         ),
@@ -161,9 +174,9 @@ class _LogInScreenState extends State<LogInScreen> {
                        }
                           
                       },
-                      child: const ButtonScreen(
+                      child:  ButtonScreen(
                         isbackround: true,
-                        title: 'تسجيل دخول',
+                        title: AppLocalizations.of(context)!.butt0,
                         widthh: 560,
                         heightt: 50,
                         paddingg: 13,
@@ -185,9 +198,9 @@ class _LogInScreenState extends State<LogInScreen> {
                         
                        
                       },
-                      child: const ButtonScreen(
+                      child:  ButtonScreen(
                         isbackround: false,
-                        title: 'ليس لديك حساب؟ سجل الآن',
+                        title: AppLocalizations.of(context)!.butt1,
                         widthh: 560,
                         heightt: 50,
                         paddingg: 13,

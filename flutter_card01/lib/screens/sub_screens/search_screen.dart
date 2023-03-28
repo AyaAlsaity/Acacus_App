@@ -75,29 +75,23 @@ class _SearchScreenState extends State<SearchScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: const [
-                    Directionality(
-                      textDirection: TextDirection.rtl,
-                      child: Text(
-                        'مرحبا بيك آية',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                        ),
+                    Text(
+                      'مرحبا بيك آية',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                     SizedBox(
                       height: 10,
                     ),
-                    Directionality(
-                      textDirection: TextDirection.rtl,
-                      child: Text(
-                        'استكشف معالم ليبيا بضغطة زر',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                        ),
+                    Text(
+                      'استكشف معالم ليبيا بضغطة زر',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
                   ],

@@ -1,12 +1,13 @@
-
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 import '../../helpers/colors.dart';
+import '../../main.dart';
 import '../../widget/splash_widgets/info_splash_screen.dart';
 import 'sign_in_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -21,95 +22,113 @@ class _SplashScreenState extends State<SplashScreen> {
     // ignore: unused_local_variable
     Size size = MediaQuery.of(context).size;
 
-    List<Widget> listPagesViewModel = const [
+    List<Widget> listPagesViewModel = [
       InfoSplash(
           image: 'assets/images/photo1.png',
-          title: 'اكتشف جمال بلادنا الحبيبة ليبيا 🇱🇾'),
+          title: AppLocalizations.of(context)!.ione),
       InfoSplash(
-          image: 'assets/images/photo2.png', title: 'احجز رحلات للمعالم المختلفة 🗿'),
+          image: 'assets/images/photo2.png',
+          title: AppLocalizations.of(context)!.itwo),
       InfoSplash(
           image: 'assets/images/photo3.png',
-          title:
-              'ترغب بزيارة مكان ما؟ تعرف على المطاعم والخدمات الموجودة بالقرب منه 🍔'),
+          title: AppLocalizations.of(context)!.ithree),
     ];
 
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Scaffold(
-        body: Column(
-          children: [
-            SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: Text(
-                        'اكاكوس',
-                        style: GoogleFonts.gulzar(
-                          fontSize: 50,
-                          fontWeight: FontWeight.w400,
-                          fontStyle: FontStyle.italic,
-                          color: mainColor,
-                        ),
+    return Scaffold(
+      
+      //  floatingActionButton: FloatingActionButton(
+      //     child: Text(AppLocalizations.of(context)!.localeName),
+      //     onPressed: () {
+      //       AppLocalizations.of(context)!.localeName == 'ar'
+      //           ? MyApp.setLocale(context, const Locale('en'))
+      //           : MyApp.setLocale(context, const Locale('ar'));
+      //     }),
+      body: Column(
+        children: [
+          SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'اكاكوس',
+                    style: GoogleFonts.gulzar(
+                      fontSize: 50,
+                      fontWeight: FontWeight.w400,
+                      fontStyle: FontStyle.italic,
+                      color: mainColor,
+                    ),
+                  ),
+                   IconButton(
+
+                        onPressed: () {
+                          AppLocalizations.of(context)!.localeName == 'ar'
+                              ? MyApp.setLocale(context, const Locale('en'))
+                              : MyApp.setLocale(context, const Locale('ar'));
+                        },
+                        icon:const Icon(Icons.language),
                       ),
+                ],
               ),
             ),
-            Expanded(
-              child: IntroductionScreen(
-                rawPages: listPagesViewModel,
-                done: Container(
-                  decoration: BoxDecoration(
-                      color: mainColor,
-                      borderRadius: BorderRadius.circular(10)),
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 25, vertical: 8),
-                    child: Text(
-                      "دخول",
-                      style: TextStyle(color: Colors.white),
+          ),
+          Expanded(
+            child: IntroductionScreen(
+              rawPages: listPagesViewModel,
+              done: Container(
+                decoration: BoxDecoration(
+                    color: mainColor, borderRadius: BorderRadius.circular(10)),
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 25, vertical: 8),
+                  child: Text(
+                    AppLocalizations.of(context)!.enter,
+                    style: const TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+              next: Container(
+                decoration: BoxDecoration(
+                    color: mainColor, borderRadius: BorderRadius.circular(10)),
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 25, vertical: 8),
+                  child: Text(
+                    AppLocalizations.of(context)!.next,
+                    style: const TextStyle(
+                      color: Colors.white,
                     ),
                   ),
                 ),
-                next: Container(
-                  decoration: BoxDecoration(
-                      color: mainColor,
-                      borderRadius: BorderRadius.circular(10)),
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 25, vertical: 8),
-                    child: Text(
-                      "التالي",
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-                skip: Text(
-                  "تخطي",
-                  style:
-                      TextStyle(color: mainColor, fontWeight: FontWeight.bold),
-                ),
-                showSkipButton: true,
-                dotsDecorator: DotsDecorator(
-                    size: const Size.square(6.0),
-                    activeSize: const Size(30.0, 6.0),
-                    activeShape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0)),
-                    color: mainColor.withOpacity(0.5),
-                    activeColor: mainColor),
-                onSkip: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const LogInScreen()));
-                },
-                onDone: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const LogInScreen()));
-                },
               ),
+              skip: Text(
+                AppLocalizations.of(context)!.skip,
+                style: TextStyle(color: mainColor, fontWeight: FontWeight.bold),
+              ),
+              showSkipButton: true,
+              dotsDecorator: DotsDecorator(
+                  size: const Size.square(6.0),
+                  activeSize: const Size(30.0, 6.0),
+                  activeShape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5.0)),
+                  color: mainColor.withOpacity(0.5),
+                  activeColor: mainColor),
+              onSkip: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const LogInScreen()));
+              },
+              onDone: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const LogInScreen()));
+              },
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

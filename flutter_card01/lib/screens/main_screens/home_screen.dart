@@ -6,7 +6,7 @@ import '../../helpers/colors.dart';
 import '../../module/data_module.dart';
 import '../../widget/static_widgets/card.dart';
 import '../sub_screens/search_screen.dart';
-import 'main_screen.dart';
+
 
 
 class HomePage extends StatefulWidget {
@@ -98,19 +98,16 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: SizedBox(
                 height: 600,
-                child: Directionality(
-                  textDirection: TextDirection.rtl,
-                  child: ListView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: data.length,
-                  itemBuilder: (context, index) {
-                    return CardScreen(
-                      title: data[index].title.toString(),
-                      dectitle: data[index].dectitle.toString(),
-                      image: data[index].image.toString(),
-                    );
-                  }),
-                ),
+                child: ListView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: data.length,
+                itemBuilder: (context, index) {
+                  return CardScreen(
+                    title: data[index].title.toString(),
+                    dectitle: data[index].dectitle.toString(),
+                    image: data[index].image.toString(),
+                  );
+                }),
               ),
             ),
           ],

@@ -70,28 +70,25 @@ class _SinInScreenState extends State<SinInScreen> {
                 alignment: AlignmentDirectional.bottomEnd,
                 children: [
                   Image.asset('assets/images/photo4.jpg'),
-                  Directionality(
-                    textDirection: TextDirection.rtl,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: const [
-                          Text(
-                            'مرحبا بك في تطبيق اكاكوس!',
-                            style: TextStyle(
-                              fontSize: 18,
-                            ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: const [
+                        Text(
+                          'مرحبا بك في تطبيق اكاكوس!',
+                          style: TextStyle(
+                            fontSize: 18,
                           ),
-                          Text(
-                            'قم بانشاء حساب للاستفادة من مزايا التطبيق',
-                            textAlign: TextAlign.end,
-                            style: TextStyle(
-                              fontSize: 12,
-                            ),
+                        ),
+                        Text(
+                          'قم بانشاء حساب للاستفادة من مزايا التطبيق',
+                          textAlign: TextAlign.end,
+                          style: TextStyle(
+                            fontSize: 12,
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 ],

@@ -42,30 +42,24 @@ class MinCard extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Directionality(
-                    textDirection: TextDirection.rtl,
-                    child: Text(
-                      title,
-                      textAlign: TextAlign.end,
-                      style: const TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                      ),
+                  Text(
+                    title,
+                    textAlign: TextAlign.end,
+                    style: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                   Row(
                     
                     children: const [
                       Icon(Icons.location_on,color: Colors.red,size: 16,),
-                      Directionality(
-                        textDirection: TextDirection.rtl,
-                        child: Text(
-                          '2.3 كم',
-                          textAlign: TextAlign.end,
-                          style: TextStyle(
-                            fontSize: 14,
-                           color: Colors.red,
-                          ),
+                      Text(
+                        '2.3 كم',
+                        textAlign: TextAlign.end,
+                        style: TextStyle(
+                          fontSize: 14,
+                         color: Colors.red,
                         ),
                       ),
                       
@@ -85,16 +79,13 @@ class MinCard extends StatelessWidget {
                   children: const [
 
                     
-                     Directionality(
-                      textDirection: TextDirection.rtl,
-                      child: Text(
-                        ' 4.2',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ),
+                     Text(
+                       ' 4.2',
+                       style: TextStyle(
+                         fontSize: 16,
+                         color: Colors.black,
+                       ),
+                     ),
                     SizedBox(
                       width: 5,
                     ),
