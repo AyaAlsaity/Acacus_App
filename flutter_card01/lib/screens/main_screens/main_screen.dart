@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
 import '../../helpers/colors.dart';
 import '../../main.dart';
 import '../../module/data_module.dart';
@@ -25,122 +24,124 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   final user = FirebaseAuth.instance.currentUser!;
   TextEditingController searchController = TextEditingController();
-  
+
   int currentIndex = 0;
-  
- 
-   Future <LogInScreen> signOut()  async{
+
+  Future<LogInScreen> signOut() async {
     await FirebaseAuth.instance.signOut();
 
     return const LogInScreen();
-}
+  }
 
   @override
   Widget build(BuildContext context) {
     List<DataModule> data = [
-    DataModule(
-      title: AppLocalizations.of(context)!.card1,
-      dectitle:AppLocalizations.of(context)!.card2,
-      image:
-          'https://i0.wp.com/rwayalkwn.com/app/uploads/2022/09/%D9%85%D8%AF%D9%8A%D9%86%D8%A9-%D8%B4%D8%AD%D8%A7%D8%AA-%D8%A3%D9%88-%D9%82%D9%88%D8%B1%D9%8A%D9%86%D8%A7-%D8%A7%D9%84%D8%A3%D8%AB%D8%B1%D9%8A%D8%A9.jpg?resize=1110%2C624&ssl=1',
-    ),
-    DataModule(
-             title: AppLocalizations.of(context)!.card1,
-      dectitle:AppLocalizations.of(context)!.card2,
-      image:
-            'https://www.alaraby.co.uk/sites/default/files/media/images/8F8F8AEB-8D0E-4F59-9477-ADD4F65985B0.jpg'),
-    DataModule(
-             title: AppLocalizations.of(context)!.card1,
-      dectitle:AppLocalizations.of(context)!.card2,
+      DataModule(
+        title: AppLocalizations.of(context)!.card1,
+        dectitle: AppLocalizations.of(context)!.card2,
         image:
-            'http://www.libya-al-mostakbal.org/upload/article/6246a8767e17bshahat-png.png'),
-    DataModule(
-              title: AppLocalizations.of(context)!.card1,
-      dectitle:AppLocalizations.of(context)!.card2,
+            'https://i0.wp.com/rwayalkwn.com/app/uploads/2022/09/%D9%85%D8%AF%D9%8A%D9%86%D8%A9-%D8%B4%D8%AD%D8%A7%D8%AA-%D8%A3%D9%88-%D9%82%D9%88%D8%B1%D9%8A%D9%86%D8%A7-%D8%A7%D9%84%D8%A3%D8%AB%D8%B1%D9%8A%D8%A9.jpg?resize=1110%2C624&ssl=1',
+      ),
+      DataModule(
+          title: AppLocalizations.of(context)!.card1,
+          dectitle: AppLocalizations.of(context)!.card2,
+          image:
+              'https://www.alaraby.co.uk/sites/default/files/media/images/8F8F8AEB-8D0E-4F59-9477-ADD4F65985B0.jpg'),
+      DataModule(
+          title: AppLocalizations.of(context)!.card1,
+          dectitle: AppLocalizations.of(context)!.card2,
+          image:
+              'http://www.libya-al-mostakbal.org/upload/article/6246a8767e17bshahat-png.png'),
+      DataModule(
+          title: AppLocalizations.of(context)!.card1,
+          dectitle: AppLocalizations.of(context)!.card2,
+          image:
+              'https://www.almrsal.com/wp-content/uploads/2021/12/IMG_%D9%A2%D9%A0%D9%A2%D9%A1%D9%A1%D9%A2%D9%A1%D9%A2_%D9%A0%D9%A5%D9%A2%D9%A2%D9%A3%D9%A3.jpg'),
+      DataModule(
+        title: AppLocalizations.of(context)!.card1,
+        dectitle: AppLocalizations.of(context)!.card2,
         image:
-            'https://www.almrsal.com/wp-content/uploads/2021/12/IMG_%D9%A2%D9%A0%D9%A2%D9%A1%D9%A1%D9%A2%D9%A1%D9%A2_%D9%A0%D9%A5%D9%A2%D9%A2%D9%A3%D9%A3.jpg'),
-    DataModule(
-           title: AppLocalizations.of(context)!.card1,
-      dectitle:AppLocalizations.of(context)!.card2,
-      image:
-          'https://al-rahhala.com/wp-content/uploads/2020/09/%D8%B9%D8%A7%D8%B5%D9%85%D8%A9-%D9%84%D9%8A%D8%A8%D9%8A%D8%A7.jpg',
-    ),
-    DataModule(
-            title: AppLocalizations.of(context)!.card1,
-      dectitle:AppLocalizations.of(context)!.card2,
-      image:
-          'https://admin.topsarabia.com/rankimg/3663a9a2-8857-4670-bd85-a5e3395754cf.jpg',
-    ),
-  ];
-  List<DataModule> city = [
-    DataModule(
-      title: AppLocalizations.of(context)!.city1,
-      dectitle:
-          'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.',
-      image:
-          'https://i0.wp.com/rwayalkwn.com/app/uploads/2022/09/%D9%85%D8%AF%D9%8A%D9%86%D8%A9-%D8%B4%D8%AD%D8%A7%D8%AA-%D8%A3%D9%88-%D9%82%D9%88%D8%B1%D9%8A%D9%86%D8%A7-%D8%A7%D9%84%D8%A3%D8%AB%D8%B1%D9%8A%D8%A9.jpg?resize=1110%2C624&ssl=1',
-    ),
-    DataModule(
-        title: AppLocalizations.of(context)!.city2,
+            'https://al-rahhala.com/wp-content/uploads/2020/09/%D8%B9%D8%A7%D8%B5%D9%85%D8%A9-%D9%84%D9%8A%D8%A8%D9%8A%D8%A7.jpg',
+      ),
+      DataModule(
+        title: AppLocalizations.of(context)!.card1,
+        dectitle: AppLocalizations.of(context)!.card2,
+        image:
+            'https://admin.topsarabia.com/rankimg/3663a9a2-8857-4670-bd85-a5e3395754cf.jpg',
+      ),
+    ];
+    List<DataModule> city = [
+      DataModule(
+        title: AppLocalizations.of(context)!.city1,
         dectitle:
             'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.',
         image:
-            'https://www.alaraby.co.uk/sites/default/files/media/images/8F8F8AEB-8D0E-4F59-9477-ADD4F65985B0.jpg'),
-    DataModule(
-        title:AppLocalizations.of(context)!.city3,
+            'https://i0.wp.com/rwayalkwn.com/app/uploads/2022/09/%D9%85%D8%AF%D9%8A%D9%86%D8%A9-%D8%B4%D8%AD%D8%A7%D8%AA-%D8%A3%D9%88-%D9%82%D9%88%D8%B1%D9%8A%D9%86%D8%A7-%D8%A7%D9%84%D8%A3%D8%AB%D8%B1%D9%8A%D8%A9.jpg?resize=1110%2C624&ssl=1',
+      ),
+      DataModule(
+          title: AppLocalizations.of(context)!.city2,
+          dectitle:
+              'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.',
+          image:
+              'https://www.alaraby.co.uk/sites/default/files/media/images/8F8F8AEB-8D0E-4F59-9477-ADD4F65985B0.jpg'),
+      DataModule(
+          title: AppLocalizations.of(context)!.city3,
+          dectitle:
+              'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.',
+          image:
+              'http://www.libya-al-mostakbal.org/upload/article/6246a8767e17bshahat-png.png'),
+      DataModule(
+          title: AppLocalizations.of(context)!.city4,
+          dectitle:
+              'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.',
+          image:
+              'https://www.almrsal.com/wp-content/uploads/2021/12/IMG_%D9%A2%D9%A0%D9%A2%D9%A1%D9%A1%D9%A2%D9%A1%D9%A2_%D9%A0%D9%A5%D9%A2%D9%A2%D9%A3%D9%A3.jpg'),
+      DataModule(
+        title: AppLocalizations.of(context)!.city5,
         dectitle:
             'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.',
         image:
-            'http://www.libya-al-mostakbal.org/upload/article/6246a8767e17bshahat-png.png'),
-    DataModule(
-        title: AppLocalizations.of(context)!.city4,
+            'https://al-rahhala.com/wp-content/uploads/2020/09/%D8%B9%D8%A7%D8%B5%D9%85%D8%A9-%D9%84%D9%8A%D8%A8%D9%8A%D8%A7.jpg',
+      ),
+      DataModule(
+        title: AppLocalizations.of(context)!.city6,
         dectitle:
             'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.',
         image:
-            'https://www.almrsal.com/wp-content/uploads/2021/12/IMG_%D9%A2%D9%A0%D9%A2%D9%A1%D9%A1%D9%A2%D9%A1%D9%A2_%D9%A0%D9%A5%D9%A2%D9%A2%D9%A3%D9%A3.jpg'),
-    DataModule(
-      title: AppLocalizations.of(context)!.city5,
-      dectitle:
-          'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.',
-      image:
-          'https://al-rahhala.com/wp-content/uploads/2020/09/%D8%B9%D8%A7%D8%B5%D9%85%D8%A9-%D9%84%D9%8A%D8%A8%D9%8A%D8%A7.jpg',
-    ),
-    DataModule(
-      title: AppLocalizations.of(context)!.city6,
-      dectitle:
-          'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.',
-      image:
-          'https://admin.topsarabia.com/rankimg/3663a9a2-8857-4670-bd85-a5e3395754cf.jpg',
-    ),
-  ];
-  
+            'https://admin.topsarabia.com/rankimg/3663a9a2-8857-4670-bd85-a5e3395754cf.jpg',
+      ),
+    ];
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                 Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 10, top: 50),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(left: 10, right: 10, top: 50),
                   child: Column(
-                      // crossAxisAlignment: CrossAxisAlignment.end,
-                    children:  [
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
                       Row(
                         // crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                        
-                           IconButton(
-
-                        onPressed: () {
-                          AppLocalizations.of(context)!.localeName == 'ar'
-                              ? MyApp.setLocale(context, const Locale('en'))
-                              : MyApp.setLocale(context, const Locale('ar'));
-                        },
-                        icon:const Icon(Icons.language),
-                      ),
-                        Text(
+                          GestureDetector(
+                            onTap: () {
+                              AppLocalizations.of(context)!.localeName == 'ar'
+                                  ? MyApp.setLocale(
+                                      context, const Locale('en'))
+                                  : MyApp.setLocale(
+                                      context, const Locale('ar'));
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Icon(Icons.language),
+                            ),
+                          ),
+                          Text(
                             AppLocalizations.of(context)!.main1,
                             // textAlign: TextAlign.center,
                             style: const TextStyle(
@@ -164,9 +165,9 @@ class _MainScreenState extends State<MainScreen> {
                     ],
                   ),
                 ),
-              
                 Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 10, top: 15),
+                  padding:
+                      const EdgeInsets.only(left: 10, right: 10, top: 15),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -206,7 +207,6 @@ class _MainScreenState extends State<MainScreen> {
                     ],
                   ),
                 ),
-               
               ],
             ),
             // const SizedBox(
@@ -219,21 +219,21 @@ class _MainScreenState extends State<MainScreen> {
                 hintText: AppLocalizations.of(context)!.main3,
                 controller: searchController,
                 keyboardType: TextInputType.name,
-                readOnlyy:true,
+                readOnlyy: true,
                 validator: (String? value) {
                   return null;
                 },
                 ispassword: false,
-                perfix:  InkWell(
+                perfix: InkWell(
                   child: const Icon(
                     Icons.search,
                   ),
-                  onTap:() {
+                  onTap: () {
                     Navigator.push(
-                              context,
-                              CupertinoPageRoute(
-                                  builder: (context) => const SearchScreen()),
-                            );
+                      context,
+                      CupertinoPageRoute(
+                          builder: (context) => const SearchScreen()),
+                    );
                   },
                 ),
               ),
@@ -254,16 +254,16 @@ class _MainScreenState extends State<MainScreen> {
             const SizedBox(
               height: 22,
             ),
-             Padding(
-              padding:const EdgeInsets.symmetric(
+            Padding(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 10,
               ),
               child: Row(
                 children: [
                   Text(
                     AppLocalizations.of(context)!.main4,
-                    textAlign: TextAlign.end,
-                    style:const  TextStyle(
+                    textAlign: TextAlign.start,
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w700,
                     ),
@@ -290,16 +290,16 @@ class _MainScreenState extends State<MainScreen> {
             const SizedBox(
               height: 22,
             ),
-             Padding(
-              padding:const EdgeInsets.symmetric(
+            Padding(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 10,
               ),
               child: Row(
                 children: [
                   Text(
                     AppLocalizations.of(context)!.main5,
-                    // textAlign: TextAlign.end,
-                    style:const TextStyle(
+                    // textAlign: TextAlign.start,
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w700,
                     ),
@@ -324,15 +324,15 @@ class _MainScreenState extends State<MainScreen> {
                     );
                   }),
             ),
-             Padding(
-              padding:const EdgeInsets.symmetric(
+            Padding(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 10,
               ),
               child: Row(
                 children: [
                   Text(
                     AppLocalizations.of(context)!.main6,
-                    // textAlign: TextAlign.end,
+                    // textAlign: TextAlign.start,
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w700,
@@ -388,7 +388,7 @@ class _MainScreenState extends State<MainScreen> {
               height: 35,
             ),
             Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 InkWell(
                   child: const Icon(
@@ -405,7 +405,6 @@ class _MainScreenState extends State<MainScreen> {
           ],
         ),
       ),
-    
     );
   }
 }
