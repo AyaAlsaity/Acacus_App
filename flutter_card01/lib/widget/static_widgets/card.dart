@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../screens/sub_screens/details_screen_one.dart';
 import '../clickable_widgets/button.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -8,13 +10,13 @@ class CardScreen extends StatefulWidget {
   String title;
   String dectitle;
   String image;
-bool expandable ;
+  bool expandable;
   CardScreen({
     Key? key,
     required this.title,
     required this.dectitle,
     required this.image,
-     this.expandable = true,
+    this.expandable = true,
   }) : super(key: key);
 
   @override
@@ -30,7 +32,9 @@ class _CardScreenState extends State<CardScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10,),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 10,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
@@ -44,7 +48,7 @@ class _CardScreenState extends State<CardScreen> {
               child: Column(
                 children: [
                   Stack(
-                    alignment :AlignmentDirectional.topEnd,
+                    alignment: AlignmentDirectional.topEnd,
                     children: [
                       Container(
                         width: 400,
@@ -55,7 +59,8 @@ class _CardScreenState extends State<CardScreen> {
                               topRight: Radius.circular(20),
                             ),
                             image: DecorationImage(
-                                image: NetworkImage(widget.image),fit: BoxFit.fill)),
+                                image: NetworkImage(widget.image),
+                                fit: BoxFit.fill)),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(10.0),
@@ -70,7 +75,9 @@ class _CardScreenState extends State<CardScreen> {
                               backgroundColor:
                                   const Color.fromARGB(113, 255, 255, 255),
                               child: Icon(
-                                isOk1 ? Icons.favorite : Icons.favorite_border_outlined,
+                                isOk1
+                                    ? Icons.favorite
+                                    : Icons.favorite_border_outlined,
                                 color: Colors.white,
                               )),
                         ),
@@ -85,7 +92,7 @@ class _CardScreenState extends State<CardScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                             Row(
+                            Row(
                               children: [
                                 Text(
                                   widget.title,
@@ -104,11 +111,8 @@ class _CardScreenState extends State<CardScreen> {
                                     color: Color.fromARGB(104, 0, 0, 0),
                                   ),
                                 ),
-                                
-                                
                               ],
                             ),
-                          
                             Row(
                               // ignore: prefer_const_literals_to_create_immutables
                               children: [
@@ -128,18 +132,19 @@ class _CardScreenState extends State<CardScreen> {
                                 )
                               ],
                             ),
-                           ],
+                          ],
                         ),
                         const SizedBox(
                           height: 8,
                         ),
                         InkWell(
                           onTap: () {
-                            if(widget.expandable){    setState(() {
-                              isOk = !isOk;
-                              isOk ? maxline = 10 : maxline = 2;
-                            });}
-                        
+                            if (widget.expandable) {
+                              setState(() {
+                                isOk = !isOk;
+                                isOk ? maxline = 10 : maxline = 2;
+                              });
+                            }
                           },
                           child: Text(
                             widget.dectitle,
@@ -158,15 +163,16 @@ class _CardScreenState extends State<CardScreen> {
                           height: 2,
                         ),
                         GestureDetector(
-                          //      onTap: () {
-                          //   setState(() {
-                          //     isOk = !isOk;
-                          //     isOk ? maxline = 10 : maxline = 2;
-                          //   });
-                          // },
-                          child:  ButtonScreen(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              CupertinoPageRoute(
+                                  builder: (context) => DetailsScreenOne()),
+                            );
+                          },
+                          child: ButtonScreen(
                             isbackround: false,
-                            title:  AppLocalizations.of(context)!.butt2,
+                            title: AppLocalizations.of(context)!.butt2,
                             widthh: 120,
                             heightt: 40,
                             paddingg: 5.5,

@@ -41,7 +41,37 @@
     "city3":"beggar",
     "city4":"tuber",
     "city5":"Ghadames",
-    "city6":"Sabratha"
+    "city6":"Sabratha",
+
+    "details1":"information",
+    "details2":"Trips",
+    "details3":"reviews",
+    "details4":"Sun_Thur",
+    "details5":"09:00 AM - 10:00 PM",
+    "details6":"5000 visitors per day",
+
+    "trips1":"group trip",
+    "trips2":"single",
+    "trips3":"Private trip",
+    "trips4":"per person",
+    "trips5":"Book now",
+    
+    "reviews1":"Aya Alsaity",
+    "reviews2":"06/03/2023",
+
+    "discover1":"Discover with us the different",
+    "discover01":"landmarks of Libya!",
+    "discover2":"All",
+    "discover3":"Milestones",
+    "discover4":"Hotels",
+    "discover5":"Restaurants",
+    "discover6":"spas",
+
+    "notification1":"In order not to miss anything!",
+    "notification2":"new",
+    "notification3":"previous"
+
+
 
 
 
