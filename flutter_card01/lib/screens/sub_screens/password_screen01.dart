@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../widget/clickable_widgets/button.dart';
 import 'password_screen02.dart';
 import 'sign_in_screen.dart';
@@ -28,19 +27,19 @@ class _PasswordScreen01State extends State<PasswordScreen01> {
             // crossAxisAlignment : CrossAxisAlignment.end,
             children: [
               Column(
-                children: const [
+                children:  [
                   Text(
-                    'اعادة تعيين كلمة السر',
+                    AppLocalizations.of(context)!.forgot3,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                   Text(
                     textAlign: TextAlign.center,
-                    'قم بادخال البريد الالكتروني لاستلام رمز التأكيد',
-                    style: TextStyle(
+                    AppLocalizations.of(context)!.pass5,
+                    style:const TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.w400,
                     ),
@@ -51,15 +50,19 @@ class _PasswordScreen01State extends State<PasswordScreen01> {
                 height: 100,
               ),
               Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
+           
                 children: [
-                  const Text(
-                    'البريد الالكتروني',
-                    textAlign: TextAlign.end,
-                    style: TextStyle(
-                      fontSize: 16,
-                    ),
+                   Row(
+                     children: [
+                       Text(
+                        AppLocalizations.of(context)!.email1,
+                        textAlign: TextAlign.end,
+                        style: const TextStyle(
+                          fontSize: 16,
+                        ),
                   ),
+                     ],
+                   ),
                   const SizedBox(
                     height: 5,
                   ),
@@ -68,7 +71,7 @@ class _PasswordScreen01State extends State<PasswordScreen01> {
                     keyboardType: TextInputType.emailAddress,
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return 'حقل مطلوب';
+                        return AppLocalizations.of(context)!.pass6;
                       }
                       return null;
                     },
@@ -95,9 +98,9 @@ class _PasswordScreen01State extends State<PasswordScreen01> {
                     );
                   }
                 },
-                child: const ButtonScreen(
+                child:  ButtonScreen(
                   isbackround: true,
-                  title: 'متابعة',
+                  title: AppLocalizations.of(context)!.next,
                   widthh: 560,
                   heightt: 50,
                   paddingg: 13,
@@ -117,9 +120,9 @@ class _PasswordScreen01State extends State<PasswordScreen01> {
                     );
                  
                 },
-                child: const ButtonScreen(
+                child:  ButtonScreen(
                   isbackround: false,
-                  title: 'رجوع',
+                  title: AppLocalizations.of(context)!.butt6,
                   widthh: 560,
                   heightt: 50,
                   paddingg: 13,

@@ -167,7 +167,7 @@ class _CardScreenState extends State<CardScreen> {
                             Navigator.push(
                               context,
                               CupertinoPageRoute(
-                                  builder: (context) => DetailsScreenOne()),
+                                  builder: (context) => const DetailsScreenOne()),
                             );
                           },
                           child: ButtonScreen(

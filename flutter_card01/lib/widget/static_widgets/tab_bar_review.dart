@@ -23,14 +23,14 @@ class TabBarReview extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    // ClipRRect(
-                    //   borderRadius: BorderRadius.circular(50),
-                    //   child: Image.network(
-                    //       'http://3.bp.blogspot.com/-jEBvHvt4UXc/Vh09tEWFoRI/AAAAAAAAAiE/yWj75pVkzkc/s400/Ha-Nui-Lee%20MBW.jpg'),
-                    // ),
-                    // SizedBox(
-                    //   width: 10,
-                    // ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(50),
+                      child: Image.network(
+                          'http://3.bp.blogspot.com/-jEBvHvt4UXc/Vh09tEWFoRI/AAAAAAAAAiE/yWj75pVkzkc/s400/Ha-Nui-Lee%20MBW.jpg'),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
                     Column(
                       children: [
                         Text(AppLocalizations.of(context)!.reviews1,

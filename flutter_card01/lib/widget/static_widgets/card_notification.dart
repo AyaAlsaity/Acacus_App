@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../helpers/colors.dart';
 
+// ignore: must_be_immutable
 class CardNotification extends StatelessWidget {
   String title;
   String dectitle;

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_pin_code_fields/flutter_pin_code_fields.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../helpers/colors.dart';
 import '../../widget/clickable_widgets/button.dart';
 import 'password_screen01.dart';
@@ -46,23 +46,23 @@ class _PasswordScreen02State extends State<PasswordScreen02> {
             children: [
               Column(
                 children: [
-                  const Directionality(
+                   Directionality(
                     textDirection: TextDirection.rtl,
                     child: Text(
-                      ' رمز التأكيد',
+                      AppLocalizations.of(context)!.pass7,
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
                   ),
-                  const Directionality(
+                   Directionality(
                     textDirection: TextDirection.rtl,
                     child: Text(
                       textAlign: TextAlign.center,
-                      'قم بإدخال رمز التأكيد الذي تم ارساله للبريد',
-                      style: TextStyle(
+                      AppLocalizations.of(context)!.pass5,
+                      style: const TextStyle(
                         fontSize: 13,
                         fontWeight: FontWeight.w400,
                       ),
@@ -122,9 +122,9 @@ class _PasswordScreen02State extends State<PasswordScreen02> {
                     );
                   }
                 },
-                child: const ButtonScreen(
+                child:  ButtonScreen(
                   isbackround: true,
-                  title: 'متابعة',
+                  title: AppLocalizations.of(context)!.next,
                   widthh: 560,
                   heightt: 50,
                   paddingg: 13,
@@ -144,9 +144,9 @@ class _PasswordScreen02State extends State<PasswordScreen02> {
                     );
                   
                 },
-                child: const ButtonScreen(
+                child:  ButtonScreen(
                   isbackround: false,
-                  title: 'رجوع',
+                  title: AppLocalizations.of(context)!.butt6,
                   widthh: 560,
                   heightt: 50,
                   paddingg: 13,

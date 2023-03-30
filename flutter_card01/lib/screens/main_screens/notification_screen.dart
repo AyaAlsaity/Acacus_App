@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../helpers/colors.dart';
-import '../../main.dart';
 import '../../module/data_module.dart';
 import '../../widget/static_widgets/card_notification.dart';
 

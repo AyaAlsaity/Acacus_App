@@ -9,6 +9,7 @@
     "ithree": "Want to visit somewhere? Find out about restaurants and services near it 🍔",
     
     "loginhi": "Welcome to the Acacus",
+    "signup1": "Create an account ",
     "email1": "E-mail",
     "email2": "Enter email",
     "email3": "Please enter your email",
@@ -18,13 +19,28 @@
     "pass2": "Enter the password",
     "pass3": "Please enter your password",
     "pass4": "Password must be more than 8 characters long",
+    "pass5": "Enter your email to receive the confirmation code",
+    "pass6": "required field",
+    "pass7": "confirmation code",
+
+    "name1": "user name",
+    "name2": "Please enter your name",
+
+    "phone1": "phone number",
+    "phone2": "Please enter your phone number",
+   
 
     "forgot1": "Forgot your password?",
     "forgot2": "Reset",
+    "forgot3": "Password Reset",
 
     "butt0": "Login",
     "butt1": "Don't have an account?' Register now",
     "butt2":"more",
+    "butt3":"Edit",
+    "butt4":"Save",
+    "butt5":"Signup",
+    "butt6":"back",
 
     "main1": "Hi Aya",
     "main2": "Explore the sights of Libya",
@@ -69,7 +85,13 @@
 
     "notification1":"In order not to miss anything!",
     "notification2":"new",
-    "notification3":"previous"
+    "notification3":"previous",
+
+    "account1":"Edit personal information",
+    "account2":"settings",
+    "account3":"About the application",
+    "account4":"helps",
+    "account5":"sign out"
 
 
 

@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -37,6 +39,7 @@ class TabBarTrips extends StatelessWidget {
                   Row(
                     children: [
                       Text(
+                        // ignore: unnecessary_brace_in_string_interps, unnecessary_string_escapes
                         "${price}\ ",
                         style: const TextStyle(fontSize: 20,fontWeight:FontWeight.w600),
                       ),

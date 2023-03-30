@@ -9,7 +9,6 @@ import '../../widget/input_widgets/textformfield.dart';
 import '../../widget/static_widgets/card.dart';
 import '../../widget/static_widgets/min_card.dart';
 import '../sub_screens/search_screen.dart';
-import '../sub_screens/sign_in_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 // import '../../widget/static_widgets/search_widgets.dart';
@@ -27,11 +26,7 @@ class _MainScreenState extends State<MainScreen> {
 
   int currentIndex = 0;
 
-  Future<LogInScreen> signOut() async {
-    await FirebaseAuth.instance.signOut();
-
-    return const LogInScreen();
-  }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -136,8 +131,8 @@ class _MainScreenState extends State<MainScreen> {
                                   : MyApp.setLocale(
                                       context, const Locale('ar'));
                             },
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
+                            child: const Padding(
+                              padding: EdgeInsets.all(8.0),
                               child: Icon(Icons.language),
                             ),
                           ),
@@ -384,24 +379,25 @@ class _MainScreenState extends State<MainScreen> {
                     },
                   )),
             ),
-            const SizedBox(
-              height: 35,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                InkWell(
-                  child: const Icon(
-                    Icons.logout,
-                    color: Colors.red,
-                    size: 35,
-                  ),
-                  onTap: () {
-                    signOut();
-                  },
-                ),
-              ],
-            ),
+            // const SizedBox(
+            //   height: 35,
+            // ),
+            // Column(
+            //   crossAxisAlignment: CrossAxisAlignment.start,
+            //   children: [
+            //     InkWell(
+            //       child: const Icon(
+            //         Icons.logout,
+            //         color: Colors.red,
+            //         size: 35,
+            //       ),
+            //       onTap: () {
+            //         signOut();
+            //       },
+            //     ),
+            //   ],
+            // ),
+         
           ],
         ),
       ),

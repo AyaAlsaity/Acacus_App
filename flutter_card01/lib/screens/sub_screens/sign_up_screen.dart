@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../module/auth_screen.dart';
 import '../../widget/clickable_widgets/button.dart';
 import '../../widget/input_widgets/textformfield.dart';
@@ -18,8 +18,7 @@ class _SinInScreenState extends State<SinInScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController passwordController2 = TextEditingController();
-  // var emailController = TextEditingController();
-  // var passwordController = TextEditingController();
+
   var formkey = GlobalKey<FormState>();
    bool ispasswordshow = true;
   bool enableLoginBtn = false;
@@ -64,29 +63,37 @@ class _SinInScreenState extends State<SinInScreen> {
                   });
                 },
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
+          
             children: [
               Stack(
                 alignment: AlignmentDirectional.bottomEnd,
                 children: [
                   Image.asset('assets/images/photo4.jpg'),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: const [
-                        Text(
-                          'مرحبا بك في تطبيق اكاكوس!',
-                          style: TextStyle(
-                            fontSize: 18,
-                          ),
+                      
+                      children:  [
+                        Row(
+                          children: [
+                            Text(
+                              AppLocalizations.of(context)!.loginhi,
+                              style:const TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
+                          ],
                         ),
-                        Text(
-                          'قم بانشاء حساب للاستفادة من مزايا التطبيق',
-                          textAlign: TextAlign.end,
-                          style: TextStyle(
-                            fontSize: 12,
-                          ),
+                        Row(
+                          children: [
+                            Text(
+                              
+                             AppLocalizations.of(context)!.signup1,
+                              style:const TextStyle(
+                                fontSize: 12,
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -103,53 +110,54 @@ class _SinInScreenState extends State<SinInScreen> {
                   children: [
                    
                      TextFieldWidget(
-                      label: 'البريد الإلكتروني',
+                      label: AppLocalizations.of(context)!.email1,
                       controller: emailController,
                       keyboardType:TextInputType.emailAddress,
-                      hintText: 'أدخل البريد الالكتروني',
+                      hintText: AppLocalizations.of(context)!.email2,
                       validator: (String? value) {
                         if (value!.isEmpty) {
-                          return "الرجاء ادخال البريد الالكتروني";
+                          return AppLocalizations.of(context)!.email3;
                         }
                         if (!value.contains('@') || !value.contains('.com')) {
-                          return "الرجاء ادخال البريد الالكتروني بشكل صحيح";
+                          return AppLocalizations.of(context)!.email4;
                         }
                         return null;
                       },ispassword: false,
                     ),
                     TextFieldWidget(
-                      label: 'كلمة المرور',
-                      hintText: 'أدخل كلمة المرور',
+                      label: AppLocalizations.of(context)!.pass1,
+                      hintText: AppLocalizations.of(context)!.pass2,
                       controller: passwordController,
                       keyboardType:TextInputType.visiblePassword,
                       validator: (String? value) {
                         if (value!.isEmpty) {
-                          return "الرجاء ادخال كلمة المرور";
+                          return AppLocalizations.of(context)!.pass3;
                         }
                         if (value.length < 8) {
-                          return "كلمة المرور يجب ان تكون اكثر من 8 احرف";
+                          return AppLocalizations.of(context)!.pass4;
                         }
                         return null;
                       }, ispassword: true,
                           
                     ),
+                   
                     TextFieldWidget(
-                      label: 'كلمة المرور',
-                      hintText: 'أدخل كلمة المرور',
-                      controller: passwordController2,
+                      label: AppLocalizations.of(context)!.pass1,
+                      hintText: AppLocalizations.of(context)!.pass2,
+                      controller: passwordController,
                       keyboardType:TextInputType.visiblePassword,
                       validator: (String? value) {
                         if (value!.isEmpty) {
-                          return "الرجاء ادخال كلمة المرور";
+                          return AppLocalizations.of(context)!.pass3;
                         }
                         if (value.length < 8) {
-                          return "كلمة المرور يجب ان تكون اكثر من 8 احرف";
+                          return AppLocalizations.of(context)!.pass4;
                         }
                         return null;
                       }, ispassword: true,
                           
                     ),
-                    
+                   
                     const SizedBox(
                       height: 40.0,
                     ),
@@ -166,9 +174,9 @@ class _SinInScreenState extends State<SinInScreen> {
                           }
                         }
                       },
-                      child: const ButtonScreen(
+                      child:  ButtonScreen(
                         isbackround: true,
-                        title: 'انشاء حساب',
+                        title:AppLocalizations.of(context)!.butt5,
                         widthh: 560,
                         heightt: 50,
                         paddingg: 13,
@@ -185,9 +193,9 @@ class _SinInScreenState extends State<SinInScreen> {
                               builder: (context) => const LogInScreen()),
                         );
                       },
-                      child: const ButtonScreen(
+                      child:  ButtonScreen(
                         isbackround: false,
-                        title: 'تسجيل دخول',
+                        title: AppLocalizations.of(context)!.butt0,
                         widthh: 560,
                         heightt: 50,
                         paddingg: 13,

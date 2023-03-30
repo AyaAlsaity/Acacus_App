@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../helpers/colors.dart';
 import '../../module/data_module.dart';
 import '../../widget/static_widgets/card.dart';
@@ -18,47 +18,50 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final user = FirebaseAuth.instance.currentUser!;
-  List<DataModule> data = [
-    DataModule(
-      title: 'آثار المدينة القديمة',
-      dectitle:
-          'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.',
-      image:
-          'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
-    ),
-    DataModule(
-        title: 'آثار المدينة القديمة',
-        dectitle:
-            'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.',
-        image:
-            'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'),
-    DataModule(
-        title: 'آثار المدينة القديمة',
-        dectitle:
-            'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.',
-        image:
-            'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'),
-    DataModule(
-        title: 'آثار المدينة القديمة',
-        dectitle:
-            'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.',
-        image:
-            'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'),
-    DataModule(
-      title: 'آثار المدينة القديمة',
-      dectitle:
-          'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.',
-      image:
-          'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
-    ),
-  ];
+ 
   @override
   Widget build(BuildContext context) {
+     List<DataModule> data = [
+      DataModule(
+        title: AppLocalizations.of(context)!.card1,
+        dectitle: AppLocalizations.of(context)!.card2,
+        image:
+            'https://i0.wp.com/rwayalkwn.com/app/uploads/2022/09/%D9%85%D8%AF%D9%8A%D9%86%D8%A9-%D8%B4%D8%AD%D8%A7%D8%AA-%D8%A3%D9%88-%D9%82%D9%88%D8%B1%D9%8A%D9%86%D8%A7-%D8%A7%D9%84%D8%A3%D8%AB%D8%B1%D9%8A%D8%A9.jpg?resize=1110%2C624&ssl=1',
+      ),
+      DataModule(
+          title: AppLocalizations.of(context)!.card1,
+          dectitle: AppLocalizations.of(context)!.card2,
+          image:
+              'https://www.alaraby.co.uk/sites/default/files/media/images/8F8F8AEB-8D0E-4F59-9477-ADD4F65985B0.jpg'),
+      DataModule(
+          title: AppLocalizations.of(context)!.card1,
+          dectitle: AppLocalizations.of(context)!.card2,
+          image:
+              'http://www.libya-al-mostakbal.org/upload/article/6246a8767e17bshahat-png.png'),
+      DataModule(
+          title: AppLocalizations.of(context)!.card1,
+          dectitle: AppLocalizations.of(context)!.card2,
+          image:
+              'https://www.almrsal.com/wp-content/uploads/2021/12/IMG_%D9%A2%D9%A0%D9%A2%D9%A1%D9%A1%D9%A2%D9%A1%D9%A2_%D9%A0%D9%A5%D9%A2%D9%A2%D9%A3%D9%A3.jpg'),
+      DataModule(
+        title: AppLocalizations.of(context)!.card1,
+        dectitle: AppLocalizations.of(context)!.card2,
+        image:
+            'https://al-rahhala.com/wp-content/uploads/2020/09/%D8%B9%D8%A7%D8%B5%D9%85%D8%A9-%D9%84%D9%8A%D8%A8%D9%8A%D8%A7.jpg',
+      ),
+      DataModule(
+        title: AppLocalizations.of(context)!.card1,
+        dectitle: AppLocalizations.of(context)!.card2,
+        image:
+            'https://admin.topsarabia.com/rankimg/3663a9a2-8857-4670-bd85-a5e3395754cf.jpg',
+      ),
+    ];
+   
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-       actions: [
+       leading:
        Padding(
          padding: const EdgeInsets.only(left: 10,right: 10,top: 5),
          child: InkWell(
@@ -76,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                     },
          ),
        ),
-       ],
+       
       ),
       body: SingleChildScrollView(
         child: Column(

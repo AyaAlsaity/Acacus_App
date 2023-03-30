@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../helpers/colors.dart';
 import '../../widget/input_widgets/textformfield.dart';
 import '../main_screens/home_screen.dart';
@@ -74,26 +74,26 @@ class _SearchScreenState extends State<SearchScreen> {
                 padding: const EdgeInsets.only(left: 10, right: 10, top: 50),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
-                  children: const [
-                    Text(
-                      'مرحبا بيك آية',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
+                  children:  [
+                     Text(
+                            AppLocalizations.of(context)!.main1,
+                            // textAlign: TextAlign.center,
+                            style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          const SizedBox(
+                        height: 10,
                       ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text(
-                      'استكشف معالم ليبيا بضغطة زر',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
+                      Text(
+                        AppLocalizations.of(context)!.main2,
+                        // textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                        ),
                       ),
-                    ),
                   ],
                 ),
               ),
@@ -104,7 +104,7 @@ class _SearchScreenState extends State<SearchScreen> {
           Padding(
             padding: const EdgeInsets.only(left: 10, right: 10),
             child: TextFieldWidget(
-              hintText: 'ابحث عن معلم، مدينة، او فندق',
+              hintText: AppLocalizations.of(context)!.main3,
               controller: searchController,
               keyboardType: TextInputType.name,
               readOnlyy:false,
@@ -167,7 +167,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 
                       },
                     ),
-                     const Text('أثار المدينة القديمة'),
+                      Text(AppLocalizations.of(context)!.card1),
                   ],
                 ),
                const SizedBox(

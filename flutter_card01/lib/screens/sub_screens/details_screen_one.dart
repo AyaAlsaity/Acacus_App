@@ -13,7 +13,7 @@ class DetailsScreenOne extends StatefulWidget {
   // String dectitle;
   // String image;
 
-  DetailsScreenOne({
+  const DetailsScreenOne({
     Key? key,
     // required this.title,
     // required this.dectitle,
