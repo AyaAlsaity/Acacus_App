@@ -2,9 +2,9 @@
 <img src="assets/images/logo2.png" alt="MyCoins" width="120">
 <br>
 <p>
- DAWAIK is an application for selling drugs and medical supplies online. The application helps users to obtain the medicines they need easily and conveniently
+MyCoins is an application dedicated to trading owners and people interested in it, helping them to know the popular currencies, currency fluctuations, and all important information for the trader.
 
-DAWAIK provides a fast and reliable service for selling drugs and medical supplies online, and it can be completely trusted in the quality of the products and the service it provides.
+With features such as adding to favorites, searching for the required currency, notifications from the application, and converting from trading currencies to international currencies such as the dollar and the Libyan dinar, as well as displaying all currency details with a graph showing the movement of the currency throughout the day, 15 days, or the past 30 days, in addition to that it is multiple Languages, dark mode and light mode
 </p>
 
 
