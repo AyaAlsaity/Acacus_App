@@ -49,6 +49,6 @@ DAWAIK provides a fast and reliable service for selling drugs and medical suppli
 
 
 ## Developers
-The application that was created by [*Aya Alsaity* ](https://github.com/abdzzzz) &  [*Areej Elbarassi*](https://github.com/amaleedjamila)
+The application that was created by [*Aya Alsaity* ](https://github.com/AyaAlsaity) &  [*Areej Elbarassi*](https://github.com/areej9891)
 ## Programming supervisor
 [*Mohamed Alsaee*](https://github.com/mohamed97alsaee)
