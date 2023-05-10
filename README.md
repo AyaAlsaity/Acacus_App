@@ -27,12 +27,26 @@ DAWAIK provides a fast and reliable service for selling drugs and medical suppli
 - VS Code
 
 
+## Techniques
+- Api for get all Coins [https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&sparkline=true]
+- Api for search coins[[$baseUrl](https://api.coingecko.com)/api/v3/coins/markets?vs_currency=idr&order=market_cap_desc&per_page=100&page=1&sparkline=false]
+- Api for get Chart Data[[${baseUrl}](https://api.coingecko.com)/api/v3/coins/${id}/market_chart?vs_currency=idr&days=$days]
+- Api for send email used EmailJS [https://api.emailjs.com/api/v1.0/email/send]
+- SignIn/SignUp/forget Password [Firebase for Authentication by Email and password]
+- profile user [Get First and Last name  and token from SignUp Screen and Add to Cloud Firestore in Firebase]
+- Favorites Coins [Get data from App all coins and Add to Cloud Firestore in Firebase]
+- Conversion between Coins [Get List coins from Api Conver  Get List from data from App all coins and Add to Cloud Firestore in Firebase ]
+- Flutter FrameWork
+- Figma
+- VS Code
+
 ## Sigup in app
 1.Enter Your Really Email<br />
 2.Enter Your Password<br />
 3.Enter Your First Name<br />
 4.Enter Your Last Name<br />
 5.Press `Sign up `Button<br />
+
 
 ## Developers
 The application that was created by [*Aya Alsaity* ](https://github.com/abdzzzz) &  [*Areej Elbarassi*](https://github.com/amaleedjamila)
