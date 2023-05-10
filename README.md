@@ -1,25 +1,6 @@
 <h1 align="center"> MyCoins 👋</h1>
 <img src="assets/images/logo2.png" alt="MyCoins" width="120">
 <br>
-## Getting started
-
-## Tools
-1. lll `lll`
-2.**ggg**<br />
-
-
-###
-[titel](link)
-
-<img src="assets/GreenLogo.png" alt="DAWAIK" width="120">
-<br>
-<br>
-DAWAIK Store E-commerce
-</h1>
-
-<p align="center">
-Application created for the purpose of LATi stududents, an ecommerce store
-</p>
 <p>
  DAWAIK is an application for selling drugs and medical supplies online. The application helps users to obtain the medicines they need easily and conveniently
 
@@ -38,31 +19,22 @@ DAWAIK provides a fast and reliable service for selling drugs and medical suppli
 
 
 
-
-
 ## Tools
-- Firebase
+- Firebase [Authentication,Cloud Firestore,Notification]
+- EmailJS [Send Messaging in email]
 - Flutter FrameWork
-- [Figma](https://www.figma.com/file/GwgQp27TxqbIXy9YkjfbJJ/DAWAIK-%2FUI?type=design&node-id=0%3A1&t=kBqMMwCsN6nCHz8B-1)
+- Figma
 - VS Code
 
-## Getting started
-
-1. Clone this repo using `git clone https://github.com/abdzzzz/pharmacy-2.git`
-2. Open Folder By *VS Code*<br />
-3. Run `flutter pub get` in *terminal* to install dependencies<br />
-4. Connect your *mobile phone* to your *computer*
-5. make sure you enable *Developer Mode* in your Device
-6. Open Folder*lib* Then open *mainfile and Press **CTRL+Rin Windows orCommand+R*in Mac
 
 ## Sigup in app
 1.Enter Your Really Email<br />
 2.Enter Your Password<br />
-3.Enter Your Name<br />
-4.Press `انشاء حساب `Button<br />
-5.Go Back to *Login Screen* Then Enter your Email & Password<br />
+3.Enter Your First Name<br />
+4.Enter Your Last Name<br />
+5.Press `Sign up `Button<br />
 
 ## Developers
-The application that was created by [*Abdulalrhman Alzentani* ](https://github.com/abdzzzz) &  [*Amaleed Jamila*](https://github.com/amaleedjamila)
+The application that was created by [*Aya Alsaity* ](https://github.com/abdzzzz) &  [*Areej Elbarassi*](https://github.com/amaleedjamila)
 ## Programming supervisor
 [*Mohamed Alsaee*](https://github.com/mohamed97alsaee)
