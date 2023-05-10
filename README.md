@@ -29,8 +29,8 @@ DAWAIK provides a fast and reliable service for selling drugs and medical suppli
 
 ## Techniques
 - Api for get all Coins [https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&sparkline=true]
-- Api for search coins[[$baseUrl](https://api.coingecko.com)/api/v3/coins/markets?vs_currency=idr&order=market_cap_desc&per_page=100&page=1&sparkline=false]
-- Api for get Chart Data[[${baseUrl}](https://api.coingecko.com)/api/v3/coins/${id}/market_chart?vs_currency=idr&days=$days]
+- Api for search coins[https://api.coingecko.com/api/v3/coins/marketsvs_currency=idr&order=market_cap_desc&per_page=100&page=1&sparkline=false]
+- Api for get Chart Data[https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=idr&days=$days]
 - Api for send email used EmailJS [https://api.emailjs.com/api/v1.0/email/send]
 - SignIn/SignUp/forget Password [Firebase for Authentication by Email and password]
 - profile user [Get First and Last name  and token from SignUp Screen and Add to Cloud Firestore in Firebase]
